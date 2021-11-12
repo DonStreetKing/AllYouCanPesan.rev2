@@ -29,24 +29,10 @@
         app:srcCompat="@drawable/contohpromo"
         tools:srcCompat="@drawable/contohpromo" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/BottomNavLayout"
-        android:layout_below="@+id/horizontalScrollView2"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="0dp">
-
-        <ListView
-            android:id="@+id/ShowList_RestoranTerdekat"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </LinearLayout>
-
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView2"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/imageView"
         android:layout_marginTop="20dp">
 
@@ -57,39 +43,126 @@
             android:orientation="horizontal">
 
             <ImageButton
-                android:id="@+id/imageButton3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:id="@+id/TombolRestoranNoTutup"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
                 android:src="@drawable/update_black_24dp" />
 
             <ImageButton
                 android:id="@+id/imageButton4"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
                 android:src="@drawable/icon_nearme" />
 
             <ImageButton
                 android:id="@+id/imageButton5"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/icon_promo"
+                tools:srcCompat="@drawable/icon_promo" />
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:src="@drawable/icon_promo"
+                tools:srcCompat="@drawable/icon_promo" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:src="@drawable/icon_promo"
+                tools:srcCompat="@drawable/icon_promo" />
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:src="@drawable/icon_promo"
+                tools:srcCompat="@drawable/icon_promo" />
+
+            <ImageButton
+                android:id="@+id/imageButton7"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
+                android:src="@drawable/icon_promo"
+                tools:srcCompat="@drawable/icon_promo" />
+
+            <ImageButton
+                android:id="@+id/imageButton8"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_weight="1"
                 android:src="@drawable/icon_promo"
                 tools:srcCompat="@drawable/icon_promo" />
         </LinearLayout>
     </HorizontalScrollView>
 
     <LinearLayout
-        android:id="@+id/BottomNavLayout"
+        android:layout_width="match_parent"
+        android:layout_height="212dp"
+        android:layout_above="@+id/BottomNavigasi"
+        android:layout_below="@+id/horizontalScrollView2"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/ShowList_RestoranTerdekat"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
+
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/BottomNavigasi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
-        android:orientation="horizontal">
+        android:foregroundGravity="bottom"
+        android:gravity="bottom">>
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_HomeNavigation"
+        <TableRow
+            android:id="@+id/TombolBottomNavigasi"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:menu="@menu/bottom_navigation_menu" />
-    </LinearLayout>
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/TombolHome"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/tombol_home" />
+
+            <ImageButton
+                android:id="@+id/TombolExplore"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/tombol_explore" />
+
+            <ImageButton
+                android:id="@+id/TombolTransaksi"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/tombol_transaksi" />
+
+            <ImageButton
+                android:id="@+id/TombolAkun"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/tombol_akun" />
+        </TableRow>
+
+    </TableLayout>
 
 </RelativeLayout>

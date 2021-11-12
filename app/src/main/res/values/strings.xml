@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">AllYouCanPesan.rev2</string>
+    <string name="history_transaksi_kamu">History Transaksi Kamu</string>
+    <string name="akun_saya">Akun Saya</string>
+    <string name="term_conditions"><![CDATA[Term & Condisi]]></string>
+    <string name="rp_100_000">Rp.100.000</string>
+    <string name="pilih_metode_pembayaran_kamu">Pilih Metode Pembayaran kamu</string>
+    <string name="already_a_user_sign_in_now">Already a user? Sign in now</string>
+    <string name="terms_and_condition">terms and condition</string>
+    <string name="create">create</string>
+    <color name="coklattua">#c29b74</color>
+    <color name="coklatmuda">#e9d8a6</color>
+    <color name="orange">#ca6702</color>
 </resources>

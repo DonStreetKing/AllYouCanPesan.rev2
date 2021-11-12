@@ -10,6 +10,48 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AllYouCanPesanrev2">
         <activity
+            android:name=".Checkout"
+            android:exported="false" />
+        <activity
+            android:name=".RestoranNoTutup"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".RestoranOpen24_7"
+            android:exported="false" />
+        <activity
+            android:name=".Open24_7"
+            android:exported="false" />
+        <activity
+            android:name=".InRestaurantMenu"
+            android:exported="true" />
+        <activity
+            android:name=".Explore"
+            android:exported="true" />
+        <activity
+            android:name=".Akun"
+            android:exported="true" />
+        <activity
+            android:name=".MenuRestoran"
+            android:exported="true" />
+        <activity
+            android:name=".ConfirmPayment_QRCode"
+            android:exported="true" />
+        <activity
+            android:name=".MetodePembayaran"
+            android:exported="true" />
+        <activity
+            android:name=".Transaksi"
+            android:exported="true" />
+        <activity
+            android:name=".SignUp"
+            android:exported="true" />
+        <activity
+            android:name=".Login"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
