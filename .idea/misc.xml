@@ -3,6 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/activity_akun.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/activity_checkout.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/activity_confirm_payment_qrcode.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/activity_explore.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/activity_in_restaurant_menu.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/activity_login.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/activity_menu_restoran.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/activity_metode_pembayaran.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/activity_restoran_no_tutup.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/activity_rincian_biaya.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/activity_search.xml" value="0.22" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/activity_sign_up.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/activity_transaksi.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/isi_list_menurestoran_di_inrestauranmenu.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/isi_list_restoranterdekat_di_activitymain.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/isi_list_transaksi_di_transaksi.xml" value="0.22447916666666667" />
+        <entry key="..\:/AllYouCanPesan.rev2/app/src/main/res/layout/search.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/drawable/icon_filter.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/drawable/icon_foodcategory_burger.xml" value="0.21458333333333332" />
         <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/drawable/rounded_button.xml" value="0.21458333333333332" />

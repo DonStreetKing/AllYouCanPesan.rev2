@@ -3,32 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RestoranNoTutup">
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/LayoutBanner_NoRestoTutup"
+        android:id="@+id/LayoutBanner_search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/TextToShow_Banner_ActivityNoTutup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <EditText
+            android:id="@+id/editTextTextPersonName5"
+            android:layout_width="20dp"
+            android:layout_height="60dp"
             android:layout_weight="1"
+            android:ems="10"
+            android:layout_gravity="center"
             android:gravity="center"
-            android:text="Lihat Pesanan Mu"
-            android:textSize="20sp" />
+            android:inputType="textPersonName"
+            android:text="Mau makan dimana?" />
+
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="401dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/NavigasiBawah"
-        android:layout_below="@id/LayoutBanner_NoRestoTutup"
+        android:layout_below="@id/LayoutBanner_search"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:orientation="horizontal">
 
@@ -41,14 +42,13 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nama Menu"
+                android:text="Nama Restoran"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -56,57 +56,73 @@
                 android:id="@+id/textView5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Deksripsi Menu"
+                android:text="Jarak Restoran"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Harga Menu"
+                android:text="10 Meja Tersedia"
                 android:textSize="16sp" />
         </LinearLayout>
 
         <ImageButton
-            android:id="@+id/TombolDelete"
+            android:id="@+id/TombolBukaMenuResto"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            app:srcCompat="@drawable/icon_delete_item" />
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/icon_menurestoran" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/NavigasiBawah"
+
+    <TableLayout
+        android:id="@+id/BottomNavigasi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="10dp"
-        android:orientation="horizontal">
+        android:foregroundGravity="bottom"
+        android:gravity="bottom">>
+
+
 
         <TableRow
+            android:id="@+id/TombolBottomNavigasi"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/Text_TotalTransaksi"
+            <ImageButton
+                android:id="@+id/TombolHome"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
+                android:layout_height="50dp"
                 android:layout_weight="1"
-                android:text="Rp. 100.000"
-                android:textSize="24sp" />
+                app:srcCompat="@drawable/tombol_home" />
 
-            <Button
-                android:id="@+id/TombolContinue1"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
+            <ImageButton
+                android:id="@+id/TombolExplore"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/orange"
-                android:capitalize="sentences"
-                android:text="Continue"
-                android:textSize="20sp"
-                app:cornerRadius="10dp" />
+                app:srcCompat="@drawable/tombol_explore" />
+
+            <ImageButton
+                android:id="@+id/TombolTransaksi"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/tombol_transaksi" />
+
+            <ImageButton
+                android:id="@+id/TombolAkun"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/tombol_akun" />
         </TableRow>
-    </LinearLayout>
+
+    </TableLayout>
+
 </RelativeLayout>
