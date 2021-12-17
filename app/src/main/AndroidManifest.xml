@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.allyoucanpesanrev2">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,15 +15,6 @@
             android:exported="false" />
         <activity
             android:name=".RestoranNoTutup"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity2"
-            android:exported="false" />
-        <activity
-            android:name=".RestoranOpen24_7"
-            android:exported="false" />
-        <activity
-            android:name=".Open24_7"
             android:exported="false" />
         <activity
             android:name=".InRestaurantMenu"
