@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String URL_GetData_API = "http://"
 
     //Bagian 1 Ini Array di ListView Restoran Terdekat
     ListView ListRestoranTerdekat;
@@ -28,6 +30,18 @@ public class MainActivity extends AppCompatActivity {
         ListRestoranTerdekat = findViewById(R.id.ShowList_RestoranTerdekat);
         MainAdapter_ActivityMain_ListRestoranTerdekat adapterUntukListRestoranTerdekat_activitymain = new MainAdapter_ActivityMain_ListRestoranTerdekat(this, NamaRestoran, GambarRestoran, TextToShow_JarakRestoranHome, TextToShow_MejaTersediaHome);
         ListRestoranTerdekat.setAdapter(adapterUntukListRestoranTerdekat_activitymain);
+
+        ListRestoranTerdekat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, MenuRestoran.class);
+                MainAdapter_ActivityMain_ListRestoranTerdekat adapter = new MainAdapter_ActivityMain_ListRestoranTerdekat()
+            }
+        });
+
+
+
+
         //END Bagian 2 "// Ini Array di ListView Restoran Terdekat"
 
 
