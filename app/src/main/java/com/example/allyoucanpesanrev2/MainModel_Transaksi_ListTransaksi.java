@@ -15,7 +15,7 @@ public class MainModel_Transaksi_ListTransaksi {
     MainModel_Transaksi_ListTransaksi(@NonNull View view)
     {
         GambarRestoran = view.findViewById(R.id.GambarRestoran);
-        NamaRestoran = view.findViewById(R.id.NamaRestoran);
+        NamaRestoran = view.findViewById(R.id.TextToShow_NamaRestoran);
         TextToShow_TanggalPembelian = view.findViewById(R.id.TextToShow_TanggalPembelian);
         TextToShow_TotalBiaya = view.findViewById(R.id.TextToShow_TotalBiaya);
     }

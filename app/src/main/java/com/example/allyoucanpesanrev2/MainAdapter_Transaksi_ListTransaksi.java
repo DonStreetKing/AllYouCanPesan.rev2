@@ -16,7 +16,7 @@ public class MainAdapter_Transaksi_ListTransaksi extends ArrayAdapter<String> {
     String[] JumlahPembelian;
 
     public MainAdapter_Transaksi_ListTransaksi(Context context, String[] NamaRestoran, int[] GambarRestoran, String[] TanggalPembelian, String[] JumlahPembelian) {
-        super(context, R.layout.isi_list_transaksi_di_transaksi,R.id.NamaRestoran, NamaRestoran);
+        super(context, R.layout.isi_list_transaksi_di_transaksi,R.id.TextToShow_NamaRestoran, NamaRestoran);
         this.context = context;
         this.GambarRestoran = GambarRestoran;
         this.NamaRestoran = NamaRestoran;

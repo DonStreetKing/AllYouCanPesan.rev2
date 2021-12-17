@@ -4,46 +4,38 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String URL_GetData_API = "http://"
-
-    //Bagian 1 Ini Array di ListView Restoran Terdekat
+    public static final String URL_GetData_API = "http://192.168.1.2/getListResto.php";
+    public MainModel_ActivityMain_ListRestoranTerdekat ListAPI;
     ListView ListRestoranTerdekat;
-    String[] NamaRestoran = {"Rainbow Six Siege", "Ghost Recon Wildland", "Tomb Raider"};
-    String[] TextToShow_JarakRestoranHome = {"https://store.steampowered.com/app/359550", "https://store.steampowered.com/app/359550", "https://store.steampowered.com/app/359550"};
-    String[] TextToShow_MejaTersediaHome = {"5 Meja", "10 Meja", "6 Meja"};
-    //END Bagian 1 "// Ini Array di ListView Restoran Terdekat"
-
-    int[] GambarRestoran = {R.drawable.logo_kfc, R.drawable.logo_burgerking, R.drawable.logo_mcdonald};
+    private List<MainModel_ActivityMain_ListRestoranTerdekat> RestoranTerdekat;
+    public String ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        //Bagian 2 "// Ini Array di ListView Restoran Terdekat"
-        ListRestoranTerdekat = findViewById(R.id.ShowList_RestoranTerdekat);
-        MainAdapter_ActivityMain_ListRestoranTerdekat adapterUntukListRestoranTerdekat_activitymain = new MainAdapter_ActivityMain_ListRestoranTerdekat(this, NamaRestoran, GambarRestoran, TextToShow_JarakRestoranHome, TextToShow_MejaTersediaHome);
-        ListRestoranTerdekat.setAdapter(adapterUntukListRestoranTerdekat_activitymain);
-
-        ListRestoranTerdekat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MainActivity.this, MenuRestoran.class);
-                MainAdapter_ActivityMain_ListRestoranTerdekat adapter = new MainAdapter_ActivityMain_ListRestoranTerdekat()
-            }
-        });
-
-
-
-
-        //END Bagian 2 "// Ini Array di ListView Restoran Terdekat"
-
 
         //======================= Horizontal View =================================\\
 
@@ -96,5 +88,60 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //End Tombol Akun
+
+        // Database untuk List Item nya
+        ListRestoranTerdekat = findViewById(R.id.ShowList_RestoranTerdekat);
+        RestoranTerdekat = new ArrayList<>();
+
+        ListRestoranTerdekat.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, MenuRestoran.class);
+                MainAdapter_ActivityMain_ListRestoranTerdekat adapter = new MainAdapter_ActivityMain_ListRestoranTerdekat(RestoranTerdekat, getApplicationContext());
+
+                ListRestoranTerdekat.setAdapter(adapter);
+                MainModel_ActivityMain_ListRestoranTerdekat posisi = adapter.getItem(position);
+                Bundle data = new Bundle();
+                data.putString("Nama_Restoran", posisi.getNama_Restoran());
+                data.putString("Jarak_Restoran", posisi.getJarak_Restoran());
+                data.putString("Meja_Tersedia", posisi.getMeja_Tersedia());
+                intent.putExtras(data);
+                startActivity(intent);
+
+            }
+        });
+        loaditem();
+    }
+    private void loaditem() {
+        final JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, URL_GetData_API, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                try {
+                    Log.d("JsonArray", response.toString());
+                    for (int i = 0; i < response.length(); i++) {
+                        JSONObject jsonObject = response.getJSONObject(i);
+
+                        ListAPI = new MainModel_ActivityMain_ListRestoranTerdekat(
+                                jsonObject.getString("Nama_Restoran"),
+                                jsonObject.getString("Jarak_Restoran"),
+                                jsonObject.getString("Meja_Tersedia"));
+                        RestoranTerdekat.add(ListAPI);
+                    }
+                    final MainAdapter_ActivityMain_ListRestoranTerdekat adapter = new MainAdapter_ActivityMain_ListRestoranTerdekat(RestoranTerdekat, getApplicationContext());
+                    ListRestoranTerdekat.setAdapter(adapter);
+                }
+                catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(jsonArrayRequest);
     }
 }

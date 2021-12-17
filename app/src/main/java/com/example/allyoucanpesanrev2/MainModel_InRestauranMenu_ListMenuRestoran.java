@@ -1,22 +1,69 @@
 package com.example.allyoucanpesanrev2;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-public class MainModel_InRestauranMenu_ListMenuRestoran {
+public class MainModel_InRestauranMenu_ListMenuRestoran implements Parcelable {
+    private String Nama_Menu, Harga_Menu, Deskripsi_Menu;
 
-    ImageView GambarMenu;
-    TextView NamaMenu;
-    TextView TextToShow_DeskripsiMenu;
-    TextView TextToShow_HargaMenu;
-    MainModel_InRestauranMenu_ListMenuRestoran(@NonNull View view)
-    {
-        GambarMenu = view.findViewById(R.id.GambarMenu);
-        NamaMenu = view.findViewById(R.id.NamaMenu);
-        TextToShow_DeskripsiMenu = view.findViewById(R.id.TextToShow_DeskripsiMenu);
-        TextToShow_HargaMenu = view.findViewById(R.id.TextToShow_HargaMenu);
+    public MainModel_InRestauranMenu_ListMenuRestoran(String Nama_Menu, String Harga_Menu, String Deskripsi_Menu) {
+        this.Nama_Menu = Nama_Menu;
+        this.Harga_Menu = Harga_Menu;
+        this.Deskripsi_Menu = Deskripsi_Menu;
     }
+
+    public String getNama_Menu() {
+        return Nama_Menu;
+    }
+    public String getHarga_Menu() {
+        return Harga_Menu;
+    }
+    public String getDeskripsi_Menu() {
+        return Deskripsi_Menu;
+    }
+
+    public void setNama_Menu(String nama_Menu) {
+        Nama_Menu = nama_Menu;
+    }
+    public void setHarga_Menu(String harga_Menu) {
+        Harga_Menu = harga_Menu;
+    }
+    public void setDeskripsi_Menu(String deskripsi_Menu) {
+        Deskripsi_Menu = deskripsi_Menu;
+    }
+
+    @Override
+    public int describeContents(){
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(this.Nama_Menu);
+        parcel.writeString(this.Harga_Menu);
+        parcel.writeString(this.Deskripsi_Menu);
+    }
+
+    protected MainModel_InRestauranMenu_ListMenuRestoran(Parcel in){
+        this.Nama_Menu = in.readString();
+        this.Harga_Menu = in.readString();
+        this.Deskripsi_Menu = in.readString();
+    }
+
+    public static final Parcelable.Creator<MainModel_InRestauranMenu_ListMenuRestoran> CREATOR = new Parcelable.Creator<MainModel_InRestauranMenu_ListMenuRestoran>() {
+
+        @Override
+        public MainModel_InRestauranMenu_ListMenuRestoran createFromParcel(Parcel source) {
+            return new MainModel_InRestauranMenu_ListMenuRestoran(source);
+        }
+        @Override
+        public MainModel_InRestauranMenu_ListMenuRestoran[] newArray(int size) {
+            return new MainModel_InRestauranMenu_ListMenuRestoran[size];
+        }
+    };
 }
