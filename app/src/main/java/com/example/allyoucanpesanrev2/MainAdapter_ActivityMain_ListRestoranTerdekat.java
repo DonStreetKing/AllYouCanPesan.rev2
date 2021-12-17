@@ -17,5 +17,13 @@ public class MainAdapter_ActivityMain_ListRestoranTerdekat extends ArrayAdapter<
 
     public MainAdapter_ActivityMain_ListRestoranTerdekat(List<MainModel_ActivityMain_ListRestoranTerdekat> restoranTerdekat, Context context) {
         super(context, R.layout.isi_list_restoranterdekat_di_activitymain, restoranTerdekat);
+        this.RestoranTerdekat = restoranTerdekat;
+        this.context = context;
+    }
+
+    @Override
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View
     }
 }
