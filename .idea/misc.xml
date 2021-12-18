@@ -3,25 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/drawable/icon_filter.xml" value="0.21458333333333332" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/drawable/icon_foodcategory_burger.xml" value="0.21458333333333332" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/drawable/rounded_button.xml" value="0.21458333333333332" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/drawable/rounded_kolomtext.xml" value="0.21458333333333332" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/activity_akun.xml" value="0.22" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/activity_checkout.xml" value="0.21145833333333333" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/activity_confirm_payment_qrcode.xml" value="0.1984375" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/activity_explore.xml" value="0.184375" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/activity_in_restaurant_menu.xml" value="0.33" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/activity_login.xml" value="0.184375" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/activity_menu_restoran.xml" value="0.2" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/activity_metode_pembayaran.xml" value="0.25" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/activity_restoran_no_tutup.xml" value="0.25" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/activity_sign_up.xml" value="0.1984375" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/activity_transaksi.xml" value="0.22" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/isi_list_menurestoran_di_inrestauranmenu.xml" value="0.1984375" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/isi_list_restoranterdekat_di_activitymain.xml" value="0.67" />
-        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/isi_list_transaksi_di_transaksi.xml" value="0.1984375" />
+        <entry key="..\:/Users/DonSt/StudioProjects/AllYouCanPesan.rev2/app/src/main/res/drawable/rounded_button.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/DonSt/StudioProjects/AllYouCanPesan.rev2/app/src/main/res/layout/activity_akun.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/DonSt/StudioProjects/AllYouCanPesan.rev2/app/src/main/res/layout/activity_in_restaurant_menu.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/DonSt/StudioProjects/AllYouCanPesan.rev2/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/DonSt/StudioProjects/AllYouCanPesan.rev2/app/src/main/res/layout/activity_main.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/DonSt/StudioProjects/AllYouCanPesan.rev2/app/src/main/res/layout/activity_sign_up.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/DonSt/StudioProjects/AllYouCanPesan.rev2/app/src/main/res/layout/isi_list_transaksi_di_transaksi.xml" value="0.1" />
+        <entry key="..\:/Users/DonStreetKing/AllYouCanPesanrev2/app/src/main/res/layout/activity_main.xml" value="0.22282608695652173" />
       </map>
     </option>
   </component>
