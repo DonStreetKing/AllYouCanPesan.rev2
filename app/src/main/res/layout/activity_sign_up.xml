@@ -14,10 +14,11 @@
 
         <ImageView
             android:id="@+id/Gambar_BannerAplikasi"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/banner_aplikasi" />
+            app:srcCompat="@drawable/banner_aplikasirev2" />
 
         <EditText
             android:id="@+id/editTextTextPersonName"

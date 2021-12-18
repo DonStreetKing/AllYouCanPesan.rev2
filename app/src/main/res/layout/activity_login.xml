@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_marginTop="-75dp"
-            app:srcCompat="@drawable/banner_aplikasi" />
+            app:srcCompat="@drawable/banner_aplikasirev2" />
 
         <EditText
             android:id="@+id/editTextTextPersonName"
@@ -70,7 +70,7 @@
             android:gravity="center"
             android:layout_marginTop="150dp"
             android:linksClickable="true"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:text="Not a User? Sign up" />
 
     </LinearLayout>
