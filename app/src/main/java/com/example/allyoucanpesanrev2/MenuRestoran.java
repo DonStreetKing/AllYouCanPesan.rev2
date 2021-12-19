@@ -77,7 +77,7 @@ public class MenuRestoran extends AppCompatActivity {
                                 jsonObject.getString("Deskripsi_Menu"));
                         MenuRestoran.add(MenuRestoranAPI);
                     }
-                    final MainModel_InRestauranMenu_ListMenuRestoran adapter = new MainAdapter_InRestauranMenu_ListMenuRestoran(MenuRestoran, getApplicationContext());
+                    final MainAdapter_InRestauranMenu_ListMenuRestoran adapter = new MainAdapter_InRestauranMenu_ListMenuRestoran(MenuRestoran, getApplicationContext());
                     ListMenuRestoran.setAdapter(adapter);
                 } catch (JSONException e) {
                     e.printStackTrace();

@@ -28,13 +28,13 @@ public class MainModel_InRestauranMenu_ListMenuRestoran implements Parcelable {
     }
 
     public void setNama_Menu(String nama_Menu) {
-        Nama_Menu = nama_Menu;
+        Nama_Menu = Nama_Menu;
     }
     public void setHarga_Menu(String harga_Menu) {
-        Harga_Menu = harga_Menu;
+        Harga_Menu = Harga_Menu;
     }
     public void setDeskripsi_Menu(String deskripsi_Menu) {
-        Deskripsi_Menu = deskripsi_Menu;
+        Deskripsi_Menu = Deskripsi_Menu;
     }
 
     @Override

@@ -5,49 +5,33 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
+import android.widget.TextView;
+import java.util.List;
 
-public class MainAdapter_InRestauranMenu_ListMenuRestoran extends ArrayAdapter<String> {
+public class MainAdapter_InRestauranMenu_ListMenuRestoran extends ArrayAdapter<MainModel_InRestauranMenu_ListMenuRestoran> {
+    private List<MainModel_InRestauranMenu_ListMenuRestoran> MenuRestoran;
+    private Context context;
 
-    Context context;
-    int[] GambarMenu;
-    String[] NamaMenu;
-    String[] TextToShow_DeskripsiMenu;
-    String[] TextToShow_HargaMenu;
-
-    public MainAdapter_InRestauranMenu_ListMenuRestoran(Context context, String[] NamaMenu, int[] GambarMenu, String[] TextToShow_DeskripsiMenu, String[] TextToShow_HargaMenu) {
-        super(context, R.layout.isi_list_menurestoran_di_inrestauranmenu,R.id.NamaMenu, NamaMenu);
+    public MainAdapter_InRestauranMenu_ListMenuRestoran(List<MainModel_InRestauranMenu_ListMenuRestoran> menuRestoran, Context context) {
+        super(context, R.layout.isi_list_menurestoran_di_inrestauranmenu, menuRestoran);
+        this.MenuRestoran = menuRestoran;
         this.context = context;
-        this.GambarMenu = GambarMenu;
-        this.NamaMenu = NamaMenu;
-        this.TextToShow_DeskripsiMenu = TextToShow_DeskripsiMenu;
-        this.TextToShow_HargaMenu = TextToShow_HargaMenu;
     }
+
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        View SingleItem = convertView;
-        MainModel_InRestauranMenu_ListMenuRestoran holder = null;
+        LayoutInflater inflater = LayoutInflater.from(context);
+        View listViewItem = inflater.inflate(R.layout.isi_list_menurestoran_di_inrestauranmenu, null, true);
 
-        if (SingleItem == null){
-            LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            SingleItem = layoutInflater.inflate(R.layout.isi_list_menurestoran_di_inrestauranmenu, parent, false);
-            holder = new MainModel_InRestauranMenu_ListMenuRestoran(SingleItem);
-            SingleItem.setTag(holder);
-        }
+        TextView TextToShowNamaMenu = listViewItem.findViewById(R.id.TextToShow_NamaMenu);
+        TextView TextToShowHargaMenu = listViewItem.findViewById(R.id.TextToShow_HargaMenu);
+        TextView TextToShowDeskripsiMenu = listViewItem.findViewById(R.id.TextToShow_DeskripsiMenu);
 
-        else {
-            holder = (MainModel_InRestauranMenu_ListMenuRestoran) SingleItem.getTag();
-        }
-        holder.GambarMenu.setImageResource(GambarMenu[position]);
-        holder.NamaMenu.setText(NamaMenu[position]);
-        holder.TextToShow_DeskripsiMenu.setText(TextToShow_DeskripsiMenu[position]);
-        holder.TextToShow_HargaMenu.setText(TextToShow_HargaMenu[position]);
-        SingleItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(getContext(),"Anda tekan: "+NamaMenu[position], Toast.LENGTH_SHORT).show();
-            }
-        });
-        return SingleItem;
+        MainModel_InRestauranMenu_ListMenuRestoran mainModel_inRestauranMenu_listMenuRestoran = MenuRestoran.get(position);
+
+        TextToShowNamaMenu.setText(mainModel_inRestauranMenu_listMenuRestoran.getNama_Menu());
+        TextToShowHargaMenu.setText(mainModel_inRestauranMenu_listMenuRestoran.getHarga_Menu());
+        TextToShowDeskripsiMenu.setText(mainModel_inRestauranMenu_listMenuRestoran.getDeskripsi_Menu());
+        return listViewItem;
     }
 }

@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String URL_GetData_API = "http://192.168.1.2/getListResto.php";
+    public static final String URL_GetData_API = "http://donstreetking.duckdns.org:8082/API/AllYouCanPesan/Get_ListRestoran.php";
     public MainModel_ActivityMain_ListRestoranTerdekat ListAPI;
     ListView ListRestoranTerdekat;
     private List<MainModel_ActivityMain_ListRestoranTerdekat> RestoranTerdekat;
