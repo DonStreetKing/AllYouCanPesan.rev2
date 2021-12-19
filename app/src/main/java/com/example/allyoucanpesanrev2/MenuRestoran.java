@@ -4,9 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.toolbox.JsonArrayRequest;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,6 +55,23 @@ public class MenuRestoran extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        loaditem();
+    }
+    private void loaditem() {
+        final JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, URL_Menu_Restoran, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                try {
+                    Log.d("JsonArray", response.toString());
+                    for (int i = 0; i < response.length(); i++) {
+                        JSONObject jsonObject = response.getJSONObject(i);
 
+                        MenuRestoranAPI = new MainModel_InRestauranMenu_ListMenuRestoran(
+                                jsonObject.getString("Nama_")
+                        )
+                    }
+                }
+            }
+        })
     }
 }
