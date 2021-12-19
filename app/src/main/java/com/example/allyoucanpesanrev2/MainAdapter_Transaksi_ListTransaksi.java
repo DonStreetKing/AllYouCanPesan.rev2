@@ -6,8 +6,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import java.util.List;
 
 public class MainAdapter_Transaksi_ListTransaksi extends ArrayAdapter<MainModel_Transaksi_ListTransaksi> {
@@ -25,6 +23,15 @@ public class MainAdapter_Transaksi_ListTransaksi extends ArrayAdapter<MainModel_
         LayoutInflater inflater = LayoutInflater.from(context);
         View listViewItem = inflater.inflate(R.layout.isi_list_transaksi_di_transaksi, null, true);
 
-        TextView TextToShow
+        TextView TextToShowNamaRestoran = listViewItem.findViewById(R.id.TextToShow_NamaRestoran);
+        TextView TextToShowTanggalBeli = listViewItem.findViewById(R.id.TextToShow_TanggalPembelian);
+        TextView TextToShowTotalBiaya = listViewItem.findViewById(R.id.TextToShow_TotalBiaya);
+
+        MainModel_Transaksi_ListTransaksi mainModel_transaksi_listTransaksi = HistoriTransaksi.get(position);
+
+        TextToShowNamaRestoran.setText(mainModel_transaksi_listTransaksi.getNama_Restoran());
+        TextToShowTanggalBeli.setText(mainModel_transaksi_listTransaksi.getTanggal_Beli());
+        TextToShowTotalBiaya.setText(mainModel_transaksi_listTransaksi.getTotal_Biaya());
+        return listViewItem;
     }
 }
