@@ -1,7 +1,5 @@
 package com.example.allyoucanpesanrev2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -122,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                         JSONObject jsonObject = response.getJSONObject(i);
 
                         ListAPI = new MainModel_ActivityMain_ListRestoranTerdekat(
+                                jsonObject.getString("Gambar_Restoran"),
                                 jsonObject.getString("Nama_Restoran"),
                                 jsonObject.getString("Jarak_Restoran"),
                                 jsonObject.getString("Meja_Tersedia"));
