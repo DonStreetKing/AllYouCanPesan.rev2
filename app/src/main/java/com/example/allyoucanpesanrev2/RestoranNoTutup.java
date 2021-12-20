@@ -20,7 +20,7 @@ public class RestoranNoTutup extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent x = new Intent(RestoranNoTutup.this, InRestaurantMenu.class);
+                Intent x = new Intent(RestoranNoTutup.this, MenuRestoran.class);
                 startActivity(x);
             }
         });

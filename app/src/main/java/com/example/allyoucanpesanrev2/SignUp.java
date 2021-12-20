@@ -1,11 +1,10 @@
 package com.example.allyoucanpesanrev2;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class SignUp extends AppCompatActivity {
 
@@ -14,7 +13,7 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        //Tombol Sudaah Punya Akun
+        //Tombol Sudah Punya Akun
         TextView sudahpunyakun = (TextView) findViewById(R.id.Tombol_SudahPunyaAkun);
         sudahpunyakun.setOnClickListener(new View.OnClickListener() {
             @Override
