@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                         JSONObject jsonObject = response.getJSONObject(i);
 
                         ListAPI = new MainModel_ActivityMain_ListRestoranTerdekat(
-                                jsonObject.getString("Gambar_Restoran"),
+//                                jsonObject.getString("Gambar_Restoran"),
                                 jsonObject.getString("Nama_Restoran"),
                                 jsonObject.getString("Jarak_Restoran"),
                                 jsonObject.getString("Meja_Tersedia"));

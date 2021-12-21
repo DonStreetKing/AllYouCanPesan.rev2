@@ -5,10 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 
 import java.util.List;
 
@@ -30,7 +27,7 @@ public class MainAdapter_ActivityMain_ListRestoranTerdekat extends ArrayAdapter<
         TextView TextToShowNamaRestoran = listViewItem.findViewById(R.id.TextToShow_NamaRestoran);
         TextView TextToShowJarakRestoran = listViewItem.findViewById(R.id.TextToShow_JarakRestoranHome);
         TextView TextToShowMejaTersedia = listViewItem.findViewById(R.id.TextToShow_MejaTersediaHome);
-        ImageView Gambar_Restoran = listViewItem.findViewById(R.id.GambarRestoran);
+//        ImageView Gambar_Restoran = listViewItem.findViewById(R.id.GambarRestoran);
 
         MainModel_ActivityMain_ListRestoranTerdekat mainModel_activityMain_listRestoranTerdekat = RestoranTerdekat.get(position);
 
@@ -38,7 +35,7 @@ public class MainAdapter_ActivityMain_ListRestoranTerdekat extends ArrayAdapter<
         TextToShowJarakRestoran.setText(mainModel_activityMain_listRestoranTerdekat.getJarak_Restoran());
         TextToShowMejaTersedia.setText(mainModel_activityMain_listRestoranTerdekat.getMeja_Tersedia());
 
-        Glide.with(context).load(mainModel_activityMain_listRestoranTerdekat.getGambar_Restoran()).into(Gambar_Restoran);
+//        Glide.with(context).load(mainModel_activityMain_listRestoranTerdekat.getGambar_Restoran()).into(Gambar_Restoran);
 
         return listViewItem;
     }
