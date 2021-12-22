@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EBE2D9"
     tools:context=".MainActivity">
 
     <SearchView
@@ -13,6 +14,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="30dp"
+        android:background="#FFFFFF"
         android:baselineAligned="false"
         android:gravity="center" />
 
@@ -26,8 +28,8 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="29dp"
         android:layout_marginEnd="31dp"
-        app:srcCompat="@drawable/contohpromo"
-        tools:srcCompat="@drawable/contohpromo" />
+        app:srcCompat="@drawable/banner_aplikasirev2"
+        tools:srcCompat="@drawable/banner_aplikasirev2" />
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView2"
@@ -46,19 +48,25 @@
                 android:id="@+id/TombolRestoranNoTutup"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:src="@drawable/update_black_24dp" />
+                android:backgroundTint="#FFFFFF"
+                android:src="@drawable/update_black_24dp"
+                android:tint="#CA6702" />
 
             <ImageButton
                 android:id="@+id/imageButton4"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
-                android:src="@drawable/icon_nearme" />
+                android:backgroundTint="#FFFFFF"
+                android:src="@drawable/icon_nearme"
+                android:tint="#CA6702" />
 
             <ImageButton
                 android:id="@+id/imageButton5"
                 android:layout_width="75dp"
                 android:layout_height="75dp"
+                android:backgroundTint="#FFFFFF"
                 android:src="@drawable/icon_promo"
+                android:tint="#CA6702"
                 tools:srcCompat="@drawable/icon_promo" />
 
             <ImageButton
@@ -66,7 +74,9 @@
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_weight="1"
+                android:backgroundTint="#FFFFFF"
                 android:src="@drawable/icon_promo"
+                android:tint="#CA6702"
                 tools:srcCompat="@drawable/icon_promo" />
 
             <ImageButton
@@ -74,7 +84,9 @@
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_weight="1"
+                android:backgroundTint="#FFFFFF"
                 android:src="@drawable/icon_promo"
+                android:tint="#CA6702"
                 tools:srcCompat="@drawable/icon_promo" />
 
             <ImageButton
@@ -82,7 +94,9 @@
                 android:layout_width="75dp"
                 android:layout_height="75dp"
                 android:layout_weight="1"
+                android:backgroundTint="#FFFFFF"
                 android:src="@drawable/icon_promo"
+                android:tint="#CA6702"
                 tools:srcCompat="@drawable/icon_promo" />
 
             <ImageButton
@@ -139,6 +153,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_weight="1"
+                android:backgroundTint="#FFFFFF"
+                android:tint="#CA6702"
                 app:srcCompat="@drawable/tombol_home" />
 
             <ImageButton
@@ -146,6 +162,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_weight="1"
+                android:backgroundTint="#FFFFFF"
+                android:tint="#CA6702"
                 app:srcCompat="@drawable/tombol_explore" />
 
             <ImageButton
@@ -153,6 +171,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_weight="1"
+                android:backgroundTint="#FFFFFF"
+                android:tint="#CA6702"
                 app:srcCompat="@drawable/tombol_transaksi" />
 
             <ImageButton
@@ -160,6 +180,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
                 android:layout_weight="1"
+                android:backgroundTint="#FFFFFF"
+                android:tint="#CA6702"
                 app:srcCompat="@drawable/tombol_akun" />
         </TableRow>
 

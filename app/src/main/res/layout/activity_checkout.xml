@@ -24,12 +24,13 @@
 
     <LinearLayout
         android:layout_width="401dp"
-        android:layout_height="match_parent"
+        android:layout_height="307dp"
         android:layout_above="@+id/NavigasiBawah"
         android:layout_below="@id/LayoutBanner_NoRestoTutup"
         android:layout_marginStart="10dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
+        android:layout_marginBottom="329dp"
         android:orientation="horizontal">
 
         <ImageView
