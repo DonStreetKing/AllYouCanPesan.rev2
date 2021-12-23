@@ -8,9 +8,10 @@
     tools:context=".MenuRestoran">
 
     <FrameLayout
+        android:id="@+id/Banner_Resto"
         android:layout_width="match_parent"
-        android:background="@color/white"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/white">
 
         <LinearLayout
             android:id="@+id/Banner_Restoran"
@@ -57,10 +58,10 @@
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/Layout_ListMenuRestoran"
-        android:layout_below="@+id/Banner_Restoran"
-        tools:ignore="NotSibling">
+        android:layout_below="@+id/Banner_Resto"
+        android:layout_marginTop="10dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -227,12 +228,10 @@
 
     <LinearLayout
         android:id="@+id/Layout_ListMenuRestoran"
-        android:layout_width="410dp"
+        android:layout_width="match_parent"
         android:layout_height="484dp"
         android:layout_above="@+id/linearLayout5"
-        android:layout_marginStart="1dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="1dp"
         android:orientation="horizontal">
 
         <ListView

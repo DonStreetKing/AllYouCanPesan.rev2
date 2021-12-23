@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -27,24 +26,24 @@ import java.util.List;
 
 public class Transaksi extends AppCompatActivity {
     public static final String URL_HistoriTransaksi_API = "http://donstreetking.duckdns.org:8082/API/AllYouCanPesan/Get_ListTransaksi.php";
-    private static final String URL_Sort_DESC = "http://donstreetking.duckdns.org:8082/API/AllYouCanPesan/Button_SortList_DESC.php";
+//    private static final String URL_Sort_DESC = "http://donstreetking.duckdns.org:8082/API/AllYouCanPesan/Button_SortList_DESC.php";
     public MainModel_Transaksi_ListTransaksi HistoriTransaksiAPI;
     ListView ListHistoriTransaksi;
     private List<MainModel_Transaksi_ListTransaksi> HistoriTransaksi;
-    ImageButton TombolSort = (ImageButton) findViewById(R.id.TombolSort);
+//    ImageButton TombolSort = (ImageButton) findViewById(R.id.TombolSort);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transaksi);
         // Tombol Sort
-            TombolSort.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String URL_Sort_Desc = URL_Sort_DESC;
-                new RequestHandler().execute(URL_Sort_Desc);
-            }
-        });
+//            TombolSort.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                String URL_Sort_Desc = URL_Sort_DESC;
+//                new RequestHandler().execute(URL_Sort_Desc);
+//            }
+//        });
 
         // Databases
         ListHistoriTransaksi = findViewById(R.id.ShowListTransaksi);
