@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/coklattua"
+    android:background="@color/Credential_background"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -25,8 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:background="@drawable/rounded_kolomtext"
-            android:backgroundTint="@color/coklatmuda"
+            android:background="@color/Background"
             android:ems="10"
             android:inputType="textWebEmailAddress"
             android:minHeight="48dp"
@@ -38,8 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:background="@drawable/rounded_kolomtext"
-            android:backgroundTint="@color/coklatmuda"
+            android:background="@color/Background"
             android:ems="10"
             android:inputType="textPassword"
             android:minHeight="48dp"
@@ -67,11 +65,11 @@
             android:id="@+id/Tombol_SudahPunyaAkun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginTop="150dp"
+            android:gravity="center"
             android:linksClickable="true"
-            android:textSize="20sp"
-            android:text="Not a User? Sign up" />
+            android:text="Not a User? Sign up"
+            android:textSize="20sp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

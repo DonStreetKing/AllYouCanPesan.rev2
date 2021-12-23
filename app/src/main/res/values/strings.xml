@@ -8,8 +8,4 @@
     <string name="already_a_user_sign_in_now">Already a user? Sign in now</string>
     <string name="terms_and_condition">terms and condition</string>
     <string name="create">create</string>
-    <color name="coklattua">#c29b74</color>
-    <color name="coklatmuda">#e9d8a6</color>
-    <color name="orange">#ca6702</color>
-    <string name="title_activity_main2">MainActivity2</string>
 </resources>

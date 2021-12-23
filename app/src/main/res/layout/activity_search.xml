@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/Background">
 
     <LinearLayout
         android:id="@+id/LayoutBanner_search"
@@ -11,17 +12,16 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editTextTextPersonName5"
-            android:layout_width="20dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:ems="10"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:inputType="textPersonName"
-            android:text="Mau makan dimana?" />
-
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="30dp"
+            android:background="#FFFFFF"
+            android:baselineAligned="false"
+            android:gravity="center" />
     </LinearLayout>
 
     <LinearLayout
@@ -31,6 +31,7 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
+        android:background="@color/white"
         android:orientation="horizontal">
 
         <ImageView
@@ -77,52 +78,5 @@
 
     </LinearLayout>
 
-
-    <TableLayout
-        android:id="@+id/BottomNavigasi"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:foregroundGravity="bottom"
-        android:gravity="bottom">>
-
-
-
-        <TableRow
-            android:id="@+id/TombolBottomNavigasi"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/TombolHome"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/tombol_home" />
-
-            <ImageButton
-                android:id="@+id/TombolExplore"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/tombol_explore" />
-
-            <ImageButton
-                android:id="@+id/TombolTransaksi"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/tombol_transaksi" />
-
-            <ImageButton
-                android:id="@+id/TombolAkun"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/tombol_akun" />
-        </TableRow>
-
-    </TableLayout>
 
 </RelativeLayout>

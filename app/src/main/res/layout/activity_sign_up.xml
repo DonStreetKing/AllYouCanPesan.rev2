@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/coklattua"
+    android:background="@color/Credential_background"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -26,8 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:background="@drawable/rounded_kolomtext"
-            android:backgroundTint="@color/coklatmuda"
+            android:background="@color/Background"
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
@@ -39,8 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:background="@drawable/rounded_kolomtext"
-            android:backgroundTint="@color/coklatmuda"
+            android:background="@color/Background"
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
@@ -52,8 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:background="@drawable/rounded_kolomtext"
-            android:backgroundTint="@color/coklatmuda"
+            android:background="@color/Background"
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
@@ -65,7 +62,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="50dp"
-            android:backgroundTint="#CA6702"
+            android:backgroundTint="@color/Clickalble"
             android:text="@string/create"
             app:cornerRadius="50dp" />
 

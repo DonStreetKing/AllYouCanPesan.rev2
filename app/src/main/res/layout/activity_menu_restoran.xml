@@ -43,15 +43,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:text="Meja Tersedia" />
         </LinearLayout>
-
-        <ImageView
-            android:id="@+id/Icon_TombolMenu"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_weight="0"
-            app:srcCompat="@drawable/icon_menurestoran" />
 
     </LinearLayout>
 
@@ -233,7 +226,7 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="1dp"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <ListView
             android:id="@+id/List_MenuRestoran"
@@ -264,7 +257,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Checkout" />
+            android:backgroundTint="#FE8533"
+            android:text="Checkout"
+            android:textColor="@color/black"
+            app:cornerRadius="10dp" />
     </LinearLayout>
 
 </RelativeLayout>

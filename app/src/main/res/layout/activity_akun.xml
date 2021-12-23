@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/coklattua"
+    android:background="@color/Background"
     tools:context=".Akun">
 
     <LinearLayout
@@ -77,7 +77,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:backgroundTint="@color/orange"
+            android:backgroundTint="@color/Clickalble"
             android:text="Edit Account"
             android:textAlignment="textStart"
             app:icon="@drawable/icon_navigate_next"
@@ -125,7 +125,7 @@
             android:id="@+id/Tombol_LogOut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/orange"
+            android:backgroundTint="@color/Clickalble"
             android:text="Log Out"
             android:textAlignment="center"
             android:textSize="16sp"
