@@ -18,11 +18,9 @@ public class Akun extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_akun);
-        // Bottom nav view
+        // Navigation Bar
         BottomNavigationView bottomNavigationView= findViewById(R.id.bottom_navigation);
-        //set home selected
         bottomNavigationView.setSelectedItemId(R.id.PageAkun);
-        //act
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -43,7 +41,7 @@ public class Akun extends AppCompatActivity {
                 return false;
             }
         });
-        // End Bottom Nav View
+        // End Bottom Nav Bar
 
         //Tombol Logout
         Button logout = (Button) findViewById(R.id.Tombol_LogOut);

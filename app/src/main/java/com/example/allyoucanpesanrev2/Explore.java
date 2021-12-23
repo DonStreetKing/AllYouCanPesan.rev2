@@ -18,9 +18,7 @@ public class Explore extends AppCompatActivity {
 
 
         BottomNavigationView bottomNavigationView= findViewById(R.id.bottom_navigation);
-        //set home selected
         bottomNavigationView.setSelectedItemId(R.id.PageExplore);
-        //act
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
