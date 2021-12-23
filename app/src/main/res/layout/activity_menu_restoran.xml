@@ -289,7 +289,7 @@
         android:layout_width="match_parent"
         android:layout_height="484dp"
         android:layout_above="@+id/linearLayout5"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <ListView
@@ -304,6 +304,7 @@
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="1dp"
+        android:background="@drawable/roundedcorner_toponly_bg"
         android:orientation="horizontal">
 
         <TextView
@@ -321,6 +322,7 @@
             android:id="@+id/Tombol_Checkout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
             android:layout_weight="1"
             android:backgroundTint="#FE8533"
             android:text="Checkout"

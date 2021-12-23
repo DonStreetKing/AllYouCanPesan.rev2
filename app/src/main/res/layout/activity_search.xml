@@ -19,7 +19,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="5dp"
             android:layout_marginEnd="30dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/rounded_layout_bg"
             android:baselineAligned="false"
             android:gravity="center" />
     </LinearLayout>

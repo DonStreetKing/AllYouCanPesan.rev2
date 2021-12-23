@@ -84,6 +84,9 @@ public class MenuRestoran extends AppCompatActivity {
         });
         loaditem();
 
+        // Total belanja dari item
+        
+
 
         //Tombol Checkout
         Button checkout = (Button) findViewById(R.id.Tombol_Checkout);

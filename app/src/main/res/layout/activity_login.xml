@@ -25,7 +25,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:background="@color/Background"
+            android:background="@drawable/rounded_layout_bg"
+            android:backgroundTint="@color/Background"
             android:ems="10"
             android:inputType="textWebEmailAddress"
             android:minHeight="48dp"
@@ -37,7 +38,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
-            android:background="@color/Background"
+            android:background="@drawable/rounded_layout_bg"
+            android:backgroundTint="@color/Background"
             android:ems="10"
             android:inputType="textPassword"
             android:minHeight="48dp"
@@ -59,7 +61,7 @@
             android:layout_marginTop="50dp"
             android:backgroundTint="#CA6702"
             android:text="LOGIN"
-            app:cornerRadius="50dp" />
+            app:cornerRadius="10dp" />
 
         <TextView
             android:id="@+id/Tombol_SudahPunyaAkun"
