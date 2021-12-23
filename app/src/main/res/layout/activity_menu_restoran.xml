@@ -4,14 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EBE2D9"
+    android:background="@color/Background"
     tools:context=".MenuRestoran">
 
     <FrameLayout
         android:id="@+id/Banner_Resto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white">
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/rounded_layout_bg"
+        android:backgroundTint="@color/Credential_background">
 
         <LinearLayout
             android:id="@+id/Banner_Restoran"
@@ -28,28 +32,75 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/TextToShow_ContohNamaRestoran"
+                    android:id="@+id/TextToShow_inBanner_NamaRestoran"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Contoh Nama Restoran" />
+                    android:text="Contoh Nama Restoran"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/TextToShow_JarakRestoran"
+                    android:id="@+id/TextToShow_inBanner_JarakRestoran"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="xxx Km dari lokasi anda" />
+                    android:text="xxx Km dari lokasi anda"
+                    android:textSize="16sp" />
 
-                <TextView
-                    android:id="@+id/TextToShow_MejaTersedia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Meja Tersedia" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/TextToShow_inBanner_MejaTersedia"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/meja_tersedia"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/TextToShow_inBanner_JamBuka"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="JamBuka"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/Strip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/strip"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/TextToShow_inBanner_JamTutup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="JamTutup"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
@@ -79,7 +130,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/icon_promo" />
+                    app:srcCompat="@drawable/icon_promo"
+                    app:tint="@color/Clickalble" />
 
                 <TextView
                     android:id="@+id/TextToShow_JenisMakanan"
@@ -101,7 +153,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/icon_promo" />
+                    app:srcCompat="@drawable/icon_promo"
+                    app:tint="@color/Clickalble" />
 
                 <TextView
                     android:id="@+id/TextToShow_JenisMakanan1"
@@ -123,7 +176,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/icon_promo" />
+                    app:srcCompat="@drawable/icon_promo"
+                    app:tint="@color/Clickalble" />
 
                 <TextView
                     android:id="@+id/TextToShow_JenisMakanan2"
@@ -145,7 +199,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/icon_promo" />
+                    app:srcCompat="@drawable/icon_promo"
+                    app:tint="@color/Clickalble" />
 
                 <TextView
                     android:id="@+id/TextToShow_JenisMakanan3"
@@ -167,7 +222,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/icon_promo" />
+                    app:srcCompat="@drawable/icon_promo"
+                    app:tint="@color/Clickalble" />
 
                 <TextView
                     android:id="@+id/TextToShow_JenisMakanan4"
@@ -189,7 +245,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/icon_promo" />
+                    app:srcCompat="@drawable/icon_promo"
+                    app:tint="@color/Clickalble" />
 
                 <TextView
                     android:id="@+id/TextToShow_JenisMakanan5"
@@ -211,7 +268,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/icon_promo" />
+                    app:srcCompat="@drawable/icon_promo"
+                    app:tint="@color/Clickalble" />
 
                 <TextView
                     android:id="@+id/TextToShow_JenisMakanan6"
@@ -254,6 +312,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
+            android:gravity="center"
             android:text="TextView"
             android:textSize="24sp"
             android:textStyle="bold" />

@@ -27,6 +27,8 @@ public class MainAdapter_ActivityMain_ListRestoranTerdekat extends ArrayAdapter<
         TextView TextToShowNamaRestoran = listViewItem.findViewById(R.id.TextToShow_NamaRestoran);
         TextView TextToShowJarakRestoran = listViewItem.findViewById(R.id.TextToShow_JarakRestoranHome);
         TextView TextToShowMejaTersedia = listViewItem.findViewById(R.id.TextToShow_MejaTersediaHome);
+        TextView TextToShowJamBuka = listViewItem.findViewById(R.id.TextToShow_JamBuka);
+        TextView TextToShowJamTutup = listViewItem.findViewById(R.id.TextToShow_JamTutup);
 //        ImageView Gambar_Restoran = listViewItem.findViewById(R.id.GambarRestoran);
 
         MainModel_ActivityMain_ListRestoranTerdekat mainModel_activityMain_listRestoranTerdekat = RestoranTerdekat.get(position);
@@ -34,6 +36,8 @@ public class MainAdapter_ActivityMain_ListRestoranTerdekat extends ArrayAdapter<
         TextToShowNamaRestoran.setText(mainModel_activityMain_listRestoranTerdekat.getNama_Restoran());
         TextToShowJarakRestoran.setText(mainModel_activityMain_listRestoranTerdekat.getJarak_Restoran());
         TextToShowMejaTersedia.setText(mainModel_activityMain_listRestoranTerdekat.getMeja_Tersedia());
+        TextToShowJamBuka.setText(mainModel_activityMain_listRestoranTerdekat.getJam_Buka());
+        TextToShowJamTutup.setText(mainModel_activityMain_listRestoranTerdekat.getJam_Tutup());
 
 //        Glide.with(context).load(mainModel_activityMain_listRestoranTerdekat.getGambar_Restoran()).into(Gambar_Restoran);
 

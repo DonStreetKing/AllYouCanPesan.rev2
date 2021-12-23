@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,23 +32,34 @@ public class MenuRestoran extends AppCompatActivity {
     ListView ListMenuRestoran;
     private List<MainModel_InRestauranMenu_ListMenuRestoran> MenuRestoran;
     public String SS;
+    TextView TextToShow_inBanner_NamaRestoran, TextToShow_inBanner_JarakRestoran, TextToShow_inBanner_MejaTersedia, TextToShow_inBanner_JamBuka, TextToShow_inBanner_JamTutup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_restoran);
 
-        //Tombol Checkout
-        Button checkout = (Button) findViewById(R.id.Tombol_Checkout);
-        checkout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        TextToShow_inBanner_NamaRestoran = findViewById(R.id.TextToShow_inBanner_NamaRestoran);
+        TextToShow_inBanner_JarakRestoran = findViewById(R.id.TextToShow_inBanner_JarakRestoran);
+        TextToShow_inBanner_MejaTersedia = findViewById(R.id.TextToShow_inBanner_MejaTersedia);
+        TextToShow_inBanner_JamBuka = findViewById(R.id.TextToShow_inBanner_JamBuka);
+        TextToShow_inBanner_JamTutup = findViewById(R.id.TextToShow_inBanner_JamTutup);
 
-                Intent x = new Intent(MenuRestoran.this, Checkout.class);
-                startActivity(x);
-            }
-        });
 
+        Intent intent = getIntent();
+        Bundle data = intent.getExtras();
+        String NamaRestoran = data.getString("Nama_Restoran");
+        String JarakRestoran = data.getString("Jarak_Restoran");
+        String MejaTersedia = data.getString("Meja_Tersedia");
+
+        String JamBuka = data.getString("Jam_Buka");
+        String JamTutup = data.getString("Jam_Tutup");
+
+        TextToShow_inBanner_NamaRestoran.setText(NamaRestoran);
+        TextToShow_inBanner_JarakRestoran.setText(JarakRestoran);
+        TextToShow_inBanner_MejaTersedia.setText(MejaTersedia);
+        TextToShow_inBanner_JamBuka.setText(JamBuka);
+        TextToShow_inBanner_JamTutup.setText(JamTutup);
 
 
         // Databases untuk Menu
@@ -71,6 +83,19 @@ public class MenuRestoran extends AppCompatActivity {
             }
         });
         loaditem();
+
+
+        //Tombol Checkout
+        Button checkout = (Button) findViewById(R.id.Tombol_Checkout);
+        checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent x = new Intent(MenuRestoran.this, Checkout.class);
+                startActivity(x);
+            }
+        });
+        // End Tombol Checkout
     }
     private void loaditem() {
         final JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, URL_Menu_Restoran, null, new Response.Listener<JSONArray>() {
@@ -103,4 +128,5 @@ public class MenuRestoran extends AppCompatActivity {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonArrayRequest);
     }
+
 }

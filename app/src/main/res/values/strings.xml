@@ -8,4 +8,7 @@
     <string name="already_a_user_sign_in_now">Already a user? Sign in now</string>
     <string name="terms_and_condition">terms and condition</string>
     <string name="create">create</string>
+    <string name="stip">-</string>
+    <string name="meja_tersedia">" Meja Tersedia"</string>
+    <string name="strip">" - "</string>
 </resources>

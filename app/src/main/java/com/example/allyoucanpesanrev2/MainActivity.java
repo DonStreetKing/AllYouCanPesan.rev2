@@ -97,6 +97,8 @@ public class MainActivity extends AppCompatActivity {
                 data.putString("Nama_Restoran", posisi.getNama_Restoran());
                 data.putString("Jarak_Restoran", posisi.getJarak_Restoran());
                 data.putString("Meja_Tersedia", posisi.getMeja_Tersedia());
+                data.putString("Jam_Buka", posisi.getJam_Buka());
+                data.putString("Jam_Tutup", posisi.getJam_Tutup());
                 intent.putExtras(data);
                 startActivity(intent);
 
@@ -118,7 +120,9 @@ public class MainActivity extends AppCompatActivity {
 //                                jsonObject.getString("Gambar_Restoran"),
                                 jsonObject.getString("Nama_Restoran"),
                                 jsonObject.getString("Jarak_Restoran"),
-                                jsonObject.getString("Meja_Tersedia"));
+                                jsonObject.getString("Meja_Tersedia"),
+                                jsonObject.getString("Jam_Buka"),
+                                jsonObject.getString("Jam_Tutup"));
                         RestoranTerdekat.add(ListAPI);
                     }
                     final MainAdapter_ActivityMain_ListRestoranTerdekat adapter = new MainAdapter_ActivityMain_ListRestoranTerdekat(RestoranTerdekat, getApplicationContext());
