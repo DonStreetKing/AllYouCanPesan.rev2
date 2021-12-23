@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -25,7 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuRestoran extends AppCompatActivity {
-    public static final String URL_Menu_Restoran = "http://192.168.1.2";
+    public static final String URL_Menu_Restoran = "http://donstreetking.duckdns.org:8082/API/AllYouCanPesan/Get_ListMenuRestoran.php";
     public MainModel_InRestauranMenu_ListMenuRestoran MenuRestoranAPI;
     ListView ListMenuRestoran;
     private List<MainModel_InRestauranMenu_ListMenuRestoran> MenuRestoran;
@@ -37,6 +38,15 @@ public class MenuRestoran extends AppCompatActivity {
         setContentView(R.layout.activity_menu_restoran);
 
         //Tombol Checkout
+        Button checkout = (Button) findViewById(R.id.Tombol_Checkout);
+        checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent x = new Intent(MenuRestoran.this, Checkout.class);
+                startActivity(x);
+            }
+        });
 
 
 

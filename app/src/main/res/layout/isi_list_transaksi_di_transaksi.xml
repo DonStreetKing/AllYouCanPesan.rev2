@@ -32,12 +32,19 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/TextToShow_TotalBiaya"
+            android:id="@+id/TextToShow_JumlahTransaksi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="TextView"
             android:textSize="16sp" />
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/TextToShow_StatusTransaksi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="TextView" />
 
 </LinearLayout>

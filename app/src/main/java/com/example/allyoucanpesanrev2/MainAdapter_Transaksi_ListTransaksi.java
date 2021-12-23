@@ -25,13 +25,15 @@ public class MainAdapter_Transaksi_ListTransaksi extends ArrayAdapter<MainModel_
 
         TextView TextToShowNamaRestoran = listViewItem.findViewById(R.id.TextToShow_NamaRestoran);
         TextView TextToShowTanggalBeli = listViewItem.findViewById(R.id.TextToShow_TanggalPembelian);
-        TextView TextToShowTotalBiaya = listViewItem.findViewById(R.id.TextToShow_TotalBiaya);
+        TextView TextToShowJumlahTransaksi = listViewItem.findViewById(R.id.TextToShow_JumlahTransaksi);
+        TextView TextToShowStatusTransaksi = listViewItem.findViewById(R.id.TextToShow_StatusTransaksi);
 
         MainModel_Transaksi_ListTransaksi mainModel_transaksi_listTransaksi = HistoriTransaksi.get(position);
 
         TextToShowNamaRestoran.setText(mainModel_transaksi_listTransaksi.getNama_Restoran());
         TextToShowTanggalBeli.setText(mainModel_transaksi_listTransaksi.getTanggal_Beli());
-        TextToShowTotalBiaya.setText(mainModel_transaksi_listTransaksi.getTotal_Biaya());
+        TextToShowJumlahTransaksi.setText(mainModel_transaksi_listTransaksi.getJumlah_Transaksi());
+        TextToShowStatusTransaksi.setText(mainModel_transaksi_listTransaksi.getStatus_Transaksi());
         return listViewItem;
     }
 }
