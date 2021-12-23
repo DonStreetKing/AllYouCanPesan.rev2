@@ -7,54 +7,60 @@
     android:background="#EBE2D9"
     tools:context=".MenuRestoran">
 
-    <LinearLayout
-        android:id="@+id/Banner_Restoran"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true">
-
-        <ImageView
-            android:id="@+id/Gambar_MenuRestoran"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:srcCompat="@drawable/logo_mcd_contoh"
-            tools:srcCompat="@drawable/logo_mcd_contoh" />
+        android:background="@color/white"
+        android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:id="@+id/Banner_Restoran"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/TextToShow_ContohNamaRestoran"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Contoh Nama Restoran" />
+            <ImageView
+                android:id="@+id/Gambar_MenuRestoran"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/logo_mcd_contoh"
+                tools:srcCompat="@drawable/logo_mcd_contoh" />
 
-            <TextView
-                android:id="@+id/TextToShow_JarakRestoran"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="xxx Km dari lokasi anda" />
-
-            <TextView
-                android:id="@+id/TextToShow_MejaTersedia"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Meja Tersedia" />
-        </LinearLayout>
+                android:orientation="vertical">
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/TextToShow_ContohNamaRestoran"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Contoh Nama Restoran" />
+
+                <TextView
+                    android:id="@+id/TextToShow_JarakRestoran"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="xxx Km dari lokasi anda" />
+
+                <TextView
+                    android:id="@+id/TextToShow_MejaTersedia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Meja Tersedia" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
         android:layout_width="match_parent"
         android:layout_height="64dp"
         android:layout_above="@+id/Layout_ListMenuRestoran"
-        android:layout_below="@+id/Banner_Restoran">
+        android:layout_below="@+id/Banner_Restoran"
+        tools:ignore="NotSibling">
 
         <LinearLayout
             android:layout_width="wrap_content"

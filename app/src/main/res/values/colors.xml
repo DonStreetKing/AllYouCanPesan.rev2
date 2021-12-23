@@ -15,4 +15,6 @@
     <color name="Background">#EBE2D9</color>
     <color name="Clickalble">#CA6702</color>
     <color name="Credential_background">#C29B74</color>
+    <color name="grey">#9f9f9f</color>
+    <color name="orange">#fe8335</color>
 </resources>
