@@ -134,57 +134,17 @@
 
     </LinearLayout>
 
-    <TableLayout
-        android:id="@+id/BottomNavigasi"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_alignParentBottom="true"
-        android:foregroundGravity="bottom"
-        android:gravity="bottom">>
+        android:orientation="horizontal">
 
-        <TableRow
-            android:id="@+id/TombolBottomNavigasi"
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/TombolHome"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFFFFF"
-                android:tint="#CA6702"
-                app:srcCompat="@drawable/tombol_home" />
-
-            <ImageButton
-                android:id="@+id/TombolExplore"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFFFFF"
-                android:tint="#CA6702"
-                app:srcCompat="@drawable/tombol_explore" />
-
-            <ImageButton
-                android:id="@+id/TombolTransaksi"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFFFFF"
-                android:tint="#CA6702"
-                app:srcCompat="@drawable/tombol_transaksi" />
-
-            <ImageButton
-                android:id="@+id/TombolAkun"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:backgroundTint="#FFFFFF"
-                android:tint="#CA6702"
-                app:srcCompat="@drawable/tombol_akun" />
-        </TableRow>
-
-    </TableLayout>
+            android:layout_height="wrap_content"
+            app:menu="@menu/bottom_navigation_menu" />
+    </LinearLayout>
 
 </RelativeLayout>

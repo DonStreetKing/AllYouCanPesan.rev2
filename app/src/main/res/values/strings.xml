@@ -11,4 +11,5 @@
     <color name="coklattua">#c29b74</color>
     <color name="coklatmuda">#e9d8a6</color>
     <color name="orange">#ca6702</color>
+    <string name="title_activity_main2">MainActivity2</string>
 </resources>

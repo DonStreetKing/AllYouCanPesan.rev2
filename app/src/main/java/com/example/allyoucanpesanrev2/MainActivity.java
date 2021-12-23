@@ -1,15 +1,19 @@
 package com.example.allyoucanpesanrev2;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -17,6 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     ListView ListRestoranTerdekat;
     private List<MainModel_ActivityMain_ListRestoranTerdekat> RestoranTerdekat;
     public String ID;
+    private MenuItem item;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,42 +58,30 @@ public class MainActivity extends AppCompatActivity {
         //End Tombol RestoranNoTutup
 
         // ======================== Bottom Navigasi ======================================= \\\
-
-        // Start Tombol Explore
-        ImageButton explore = (ImageButton) findViewById(R.id.TombolExplore);
-        explore.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent x = new Intent(MainActivity.this, Explore.class);
-                startActivity(x);
-            }
-        });
-        // End Tombol Explore
-
-        // Start Tombol Transaksi
-        ImageButton transaksi = (ImageButton) findViewById(R.id.TombolTransaksi);
-        transaksi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent x = new Intent(MainActivity.this, Transaksi.class);
-                startActivity(x);
-            }
-        });
-        //End Tombol Transaksi
-
-        //Start Tombol Akun
-        ImageButton akun = (ImageButton) findViewById(R.id.TombolAkun);
-        akun.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent x = new Intent(MainActivity.this, Akun.class);
-                startActivity(x);
-            }
-        });
-        //End Tombol Akun
+        BottomNavigationView bottomNavigationView= findViewById(R.id.bottom_navigation);
+        //set home selected
+        bottomNavigationView.setSelectedItemId(R.id.PageHome);
+        //act
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+                                                                     @Override
+                                                                     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                                                                         switch (menuItem.getItemId()) {
+                                                                             case R.id.PageHome:
+//                                                                                 startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                                                                 return true;
+                                                                             case R.id.PageExplore:
+                                                                                 startActivity(new Intent(getApplicationContext(), Explore.class));
+                                                                                 return true;
+                                                                             case R.id.PageTransaksi:
+                                                                                 startActivity(new Intent(getApplicationContext(), Transaksi.class));
+                                                                                 return true;
+                                                                             case R.id.PageAkun:
+                                                                                 startActivity(new Intent(getApplicationContext(), Akun.class));
+                                                                                 return true;
+                                                                         }
+                                                                         return false;
+                                                                     }
+                                                                 });
 
         // Database untuk List Item nya
         ListRestoranTerdekat = findViewById(R.id.ShowList_RestoranTerdekat);
@@ -112,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         });
         loaditem();
     }
+
     private void loaditem() {
         final JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, URL_GetData_API, null, new Response.Listener<JSONArray>() {
             @Override
@@ -130,8 +125,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                     final MainAdapter_ActivityMain_ListRestoranTerdekat adapter = new MainAdapter_ActivityMain_ListRestoranTerdekat(RestoranTerdekat, getApplicationContext());
                     ListRestoranTerdekat.setAdapter(adapter);
-                }
-                catch (JSONException e) {
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/PageHome"
+        android:enabled="true"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Home" />
+    <item
+        android:id="@+id/PageExplore"
+        android:enabled="true"
+        android:icon="@drawable/tombol_explore"
+        android:title="Explore" />
+    <item
+        android:id="@+id/PageTransaksi"
+        android:enabled="true"
+        android:icon="@drawable/tombol_transaksi"
+        android:title="Transaksi" />
+    <item
+        android:id="@+id/PageAkun"
+        android:enabled="true"
+        android:icon="@drawable/tombol_akun"
+        android:title="Akun" />
+</menu>
