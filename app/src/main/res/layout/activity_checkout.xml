@@ -13,14 +13,23 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/TextToShow_Banner_ActivityNoTutup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="Lihat Pesanan Mu"
-            android:textSize="20sp" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/Credential_background"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/TextToShow_Banner_ActivityNoTutup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Lihat Pesanan Mu"
+                android:textSize="20sp" />
+        </FrameLayout>
+
     </LinearLayout>
 
     <LinearLayout

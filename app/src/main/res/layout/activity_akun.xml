@@ -13,14 +13,22 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/AkunSayaText"
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/akun_saya"
-            android:textSize="20sp" />
+            android:layout_height="match_parent"
+            android:background="@color/Credential_background"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/AkunSayaText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/akun_saya"
+                android:textSize="20sp" />
+        </FrameLayout>
+
     </LinearLayout>
 
     <LinearLayout
