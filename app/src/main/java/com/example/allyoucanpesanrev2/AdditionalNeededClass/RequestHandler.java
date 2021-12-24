@@ -1,4 +1,4 @@
-package com.example.allyoucanpesanrev2;
+package com.example.allyoucanpesanrev2.AdditionalNeededClass;
 
 import android.os.AsyncTask;
 

@@ -1,12 +1,7 @@
-package com.example.allyoucanpesanrev2;
+package com.example.allyoucanpesanrev2.Model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-import androidx.annotation.NonNull;
 
 public class MainModel_InRestauranMenu_ListMenuRestoran implements Parcelable {
     private String Nama_Menu, Harga_Menu, Deskripsi_Menu;

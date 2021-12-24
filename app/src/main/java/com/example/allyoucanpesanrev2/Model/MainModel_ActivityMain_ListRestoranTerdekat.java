@@ -1,4 +1,4 @@
-package com.example.allyoucanpesanrev2;
+package com.example.allyoucanpesanrev2.Model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
