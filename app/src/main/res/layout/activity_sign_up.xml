@@ -21,7 +21,7 @@
             app:srcCompat="@drawable/banner_aplikasirev2" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/KolomIsi_Email"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -58,9 +58,21 @@
             android:inputType="textPersonName"
             android:minHeight="48dp"
             android:text="password" />
+        <EditText
+            android:id="@+id/editTextTextPersonName4"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/rounded_layout_bg"
+            android:backgroundTint="@color/Background"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="Repeat Password" />
 
         <Button
-            android:id="@+id/Tombol_CreateAkun"
+            android:id="@+id/Tombol_Login"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -78,7 +90,7 @@
             android:text="@string/terms_and_condition" />
 
         <TextView
-            android:id="@+id/Tombol_SudahPunyaAkun"
+            android:id="@+id/Tombol_KalauBelumPunyaAkun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="120dp"

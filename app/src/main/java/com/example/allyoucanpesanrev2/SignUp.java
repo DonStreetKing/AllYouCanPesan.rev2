@@ -14,7 +14,7 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 
         //Tombol Sudah Punya Akun
-        TextView sudahpunyakun = (TextView) findViewById(R.id.Tombol_SudahPunyaAkun);
+        TextView sudahpunyakun = (TextView) findViewById(R.id.Tombol_KalauBelumPunyaAkun);
         sudahpunyakun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
