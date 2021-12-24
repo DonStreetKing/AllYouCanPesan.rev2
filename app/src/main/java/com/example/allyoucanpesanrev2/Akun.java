@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Akun extends AppCompatActivity {
-    Button Tombol_Logout;
+    Button logout;
     TextView NamaUser, EmailPengguna;
     String Nama, Email;
     SharedPreferences sharedPreferences;
@@ -30,7 +30,7 @@ public class Akun extends AppCompatActivity {
 
         NamaUser = (TextView) findViewById(R.id.NamaUser);
         EmailPengguna = (TextView) findViewById(R.id.Email_Pengguna);
-        Button logout = (Button) findViewById(R.id.Tombol_LogOut);
+        logout = (Button) findViewById(R.id.Tombol_LogOut);
 
         sharedPreferences = getSharedPreferences(Login.my_shared_preferences, Context.MODE_PRIVATE);
         Nama = getIntent().getStringExtra(TAG_Nama);

@@ -24,11 +24,12 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NavigableMap;
 
 public class SignUp extends AppCompatActivity {
     ProgressDialog progressDialog;
     Button BuatAkun;
-    EditText KolomIsi_Username, editTextBuatEmail, editTextPassword1, editTextPassword2;
+    EditText KolomIsi_Nama, editTextBuatEmail, editTextPassword1, editTextPassword2;
     Intent intent;
 
     int success;
@@ -55,7 +56,7 @@ public class SignUp extends AppCompatActivity {
         }
 
         BuatAkun = (Button) findViewById(R.id.Tombol_MasukAkun);
-        KolomIsi_Username = (EditText) findViewById(R.id.KolomIsi_Username);
+        KolomIsi_Nama = (EditText) findViewById(R.id.KolomIsi_Nama);
         editTextBuatEmail = (EditText) findViewById(R.id.editTextBuatEmail);
         editTextPassword1 = (EditText) findViewById(R.id.editTextPassword1);
         editTextPassword2 = (EditText) findViewById(R.id.editTextPassword2);
@@ -64,12 +65,13 @@ public class SignUp extends AppCompatActivity {
         BuatAkun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String Nama = KolomIsi_Nama.getText().toString();
                 String Email = editTextBuatEmail.getText().toString();
                 String Password = editTextPassword1.getText().toString();
                 String Confirm_Password = editTextPassword2.getText().toString();
 
                 if (connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isAvailable() && connectivityManager.getActiveNetworkInfo().isConnected()) {
-                    checkUser_Account(Email, Password, Confirm_Password);
+                    checkUser_Account(Nama, Email, Password, Confirm_Password);
                 } else {
                     Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_SHORT).show();
                 }
@@ -88,7 +90,7 @@ public class SignUp extends AppCompatActivity {
         });
     }
 
-    private void checkUser_Account(final String Email, final String Password, final String Confirm_Password) {
+    private void checkUser_Account(String Nama, final String Email, final String Password, final String Confirm_Password) {
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
         progressDialog.setMessage("Register...");
@@ -108,7 +110,7 @@ public class SignUp extends AppCompatActivity {
                     if (success == 1) {
                         Log.e("Successfully Register!", jsonObject.toString());
                         Toast.makeText(getApplicationContext(), jsonObject.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
-
+                        KolomIsi_Nama.setText("");
                         editTextBuatEmail.setText("");
                         editTextPassword1.setText("");
                         editTextPassword2.setText("");
@@ -131,7 +133,8 @@ public class SignUp extends AppCompatActivity {
         {
             @Override
             protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<>();
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Nama", Nama);
                 params.put("Email", Email);
                 params.put("Password", Password);
                 params.put("Confirm_Password", Confirm_Password);

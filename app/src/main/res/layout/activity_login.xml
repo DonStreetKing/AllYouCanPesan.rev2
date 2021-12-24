@@ -20,7 +20,7 @@
             app:srcCompat="@drawable/banner_aplikasirev2" />
 
         <EditText
-            android:id="@+id/KolomIsi_Username"
+            android:id="@+id/KolomIsi_Nama"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

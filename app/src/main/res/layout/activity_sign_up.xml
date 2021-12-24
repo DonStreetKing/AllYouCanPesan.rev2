@@ -21,7 +21,7 @@
             app:srcCompat="@drawable/banner_aplikasirev2" />
 
         <EditText
-            android:id="@+id/KolomIsi_Username"
+            android:id="@+id/KolomIsi_Nama"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -30,8 +30,7 @@
             android:backgroundTint="@color/Background"
             android:ems="10"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="username" />
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/editTextBuatEmail"
@@ -43,8 +42,7 @@
             android:backgroundTint="@color/Background"
             android:ems="10"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="email" />
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/editTextPassword1"
@@ -56,20 +54,20 @@
             android:backgroundTint="@color/Background"
             android:ems="10"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="password" />
+            android:minHeight="48dp" />
+
         <EditText
             android:id="@+id/editTextPassword2"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="40dp"
+            android:autoText="false"
             android:background="@drawable/rounded_layout_bg"
             android:backgroundTint="@color/Background"
             android:ems="10"
             android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:text="Repeat Password" />
+            android:minHeight="48dp" />
 
         <Button
             android:id="@+id/Tombol_MasukAkun"

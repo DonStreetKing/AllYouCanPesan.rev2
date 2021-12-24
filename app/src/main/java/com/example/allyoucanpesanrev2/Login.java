@@ -75,11 +75,10 @@ public class Login extends AppCompatActivity {
         //Tombol login
         Button login = (Button) findViewById(R.id.Tombol_MasukAkun);
         TextView signup = (TextView) findViewById(R.id.Tombol_KalauBelumPunyaAkun);
-        EditText_Email = (EditText) findViewById(R.id.KolomIsi_Username);
+        EditText_Email = (EditText) findViewById(R.id.KolomIsi_Nama);
         EditText_Password = (EditText) findViewById(R.id.editTextTextPassword);
 
         // cek session
-
         sharedPreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
         session = sharedPreferences.getBoolean(session_status, false);
         ID = sharedPreferences.getString(TAG_ID, null);
