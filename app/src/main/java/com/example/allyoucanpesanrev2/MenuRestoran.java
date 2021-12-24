@@ -32,7 +32,7 @@ public class MenuRestoran extends AppCompatActivity {
     ListView ListMenuRestoran;
     private List<MainModel_InRestauranMenu_ListMenuRestoran> MenuRestoran;
     public String SS;
-    TextView TextToShow_inBanner_NamaRestoran, TextToShow_inBanner_JarakRestoran, TextToShow_inBanner_MejaTersedia, TextToShow_inBanner_JamBuka, TextToShow_inBanner_JamTutup;
+    TextView TextToShow_inBanner_NamaRestoran, TextToShow_inBanner_JarakRestoran, TextToShow_inBanner_MejaTersedia, TextToShow_inBanner_WaktuOperasional;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +42,7 @@ public class MenuRestoran extends AppCompatActivity {
         TextToShow_inBanner_NamaRestoran = findViewById(R.id.TextToShow_inBanner_NamaRestoran);
         TextToShow_inBanner_JarakRestoran = findViewById(R.id.TextToShow_inBanner_JarakRestoran);
         TextToShow_inBanner_MejaTersedia = findViewById(R.id.TextToShow_inBanner_MejaTersedia);
-        TextToShow_inBanner_JamBuka = findViewById(R.id.TextToShow_inBanner_JamBuka);
-        TextToShow_inBanner_JamTutup = findViewById(R.id.TextToShow_inBanner_JamTutup);
-
+        TextToShow_inBanner_WaktuOperasional = findViewById(R.id.TextToShow_inBanner_WaktuOperasional);
 
         Intent intent = getIntent();
         Bundle data = intent.getExtras();
@@ -58,8 +56,7 @@ public class MenuRestoran extends AppCompatActivity {
         TextToShow_inBanner_NamaRestoran.setText(NamaRestoran);
         TextToShow_inBanner_JarakRestoran.setText(JarakRestoran);
         TextToShow_inBanner_MejaTersedia.setText(MejaTersedia);
-        TextToShow_inBanner_JamBuka.setText(JamBuka);
-        TextToShow_inBanner_JamTutup.setText(JamTutup);
+        TextToShow_inBanner_WaktuOperasional.setText(JamBuka + " - " + JamTutup);
 
 
         // Databases untuk Menu
