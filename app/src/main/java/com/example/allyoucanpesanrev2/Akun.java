@@ -1,10 +1,13 @@
 package com.example.allyoucanpesanrev2;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,11 +15,46 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Akun extends AppCompatActivity {
+    Button Tombol_Logout;
+    TextView NamaUser, EmailPengguna;
+    String Nama, Email;
+    SharedPreferences sharedPreferences;
+
+    public static final String TAG_Nama = "Nama";
+    public static final String TAG_Email = "Email";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_akun);
+
+        NamaUser = (TextView) findViewById(R.id.NamaUser);
+        EmailPengguna = (TextView) findViewById(R.id.Email_Pengguna);
+        Button logout = (Button) findViewById(R.id.Tombol_LogOut);
+
+        sharedPreferences = getSharedPreferences(Login.my_shared_preferences, Context.MODE_PRIVATE);
+        Nama = getIntent().getStringExtra(TAG_Nama);
+        Email = getIntent().getStringExtra(TAG_Email);
+
+        NamaUser.setText(Nama);
+        EmailPengguna.setText(Email);
+
+        //Tombol Logou
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean(Login.session_status, false);
+                editor.putString(TAG_Nama, null);
+                editor.putString(TAG_Email, null);
+                editor.commit();
+
+                Intent intent = new Intent(Akun.this, Login.class);
+                startActivity(intent);
+            }
+        });
+
         // Navigation Bar
         BottomNavigationView bottomNavigationView= findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.PageAkun);
@@ -41,16 +79,5 @@ public class Akun extends AppCompatActivity {
             }
         });
         // End Bottom Nav Bar
-
-        //Tombol Logout
-        Button logout = (Button) findViewById(R.id.Tombol_LogOut);
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent x = new Intent(Akun.this, Login.class);
-                startActivity(x);
-            }
-        });
     }
 }

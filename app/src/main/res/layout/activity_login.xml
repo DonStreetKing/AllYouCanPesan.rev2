@@ -20,7 +20,7 @@
             app:srcCompat="@drawable/banner_aplikasirev2" />
 
         <EditText
-            android:id="@+id/KolomIsi_Email"
+            android:id="@+id/KolomIsi_Username"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -29,8 +29,7 @@
             android:backgroundTint="@color/Background"
             android:ems="10"
             android:inputType="textWebEmailAddress"
-            android:minHeight="48dp"
-            android:text="Email" />
+            android:minHeight="48dp" />
 
         <EditText
             android:id="@+id/editTextTextPassword"
@@ -42,8 +41,7 @@
             android:backgroundTint="@color/Background"
             android:ems="10"
             android:inputType="textPassword"
-            android:minHeight="48dp"
-            android:text="Password" />
+            android:minHeight="48dp" />
 
         <TextView
             android:id="@+id/textView"
@@ -54,7 +52,7 @@
             android:text="forgot password?" />
 
         <Button
-            android:id="@+id/Tombol_Login"
+            android:id="@+id/Tombol_MasukAkun"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_gravity="center"

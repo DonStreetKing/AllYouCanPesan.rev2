@@ -63,7 +63,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         // Code untuk login PHP
-        connectivityManager = (connectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         {
             if (connectivityManager.getActiveNetwork() !=null && connectivityManager.getActiveNetworkInfo().isAvailable() && connectivityManager.getActiveNetworkInfo().isConnected()) {
             }
@@ -73,9 +73,9 @@ public class Login extends AppCompatActivity {
         }
 
         //Tombol login
-        Button login = (Button) findViewById(R.id.Tombol_Login);
+        Button login = (Button) findViewById(R.id.Tombol_MasukAkun);
         TextView signup = (TextView) findViewById(R.id.Tombol_KalauBelumPunyaAkun);
-        EditText_Email = (EditText) findViewById(R.id.KolomIsi_Email);
+        EditText_Email = (EditText) findViewById(R.id.KolomIsi_Username);
         EditText_Password = (EditText) findViewById(R.id.editTextTextPassword);
 
         // cek session
@@ -87,8 +87,8 @@ public class Login extends AppCompatActivity {
 
         if (session) {
             Intent intent = new Intent(Login.this, MainActivity.class);
-            intent.putExtras(TAG_ID, ID);
-            intent.putExtras(TAG_EMAIL, Email);
+            intent.putExtra(TAG_ID, ID);
+            intent.putExtra(TAG_EMAIL, Email);
             finish();
             startActivity(intent);
         }

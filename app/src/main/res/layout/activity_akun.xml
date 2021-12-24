@@ -64,7 +64,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/NoHP_Pengguna"
+                android:id="@+id/Email_Pengguna"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="08199099"

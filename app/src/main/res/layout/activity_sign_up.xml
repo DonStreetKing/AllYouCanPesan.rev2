@@ -21,7 +21,7 @@
             app:srcCompat="@drawable/banner_aplikasirev2" />
 
         <EditText
-            android:id="@+id/KolomIsi_Email"
+            android:id="@+id/KolomIsi_Username"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -34,7 +34,7 @@
             android:text="username" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/editTextBuatEmail"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -47,7 +47,7 @@
             android:text="email" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/editTextPassword1"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -59,7 +59,7 @@
             android:minHeight="48dp"
             android:text="password" />
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/editTextPassword2"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -72,7 +72,7 @@
             android:text="Repeat Password" />
 
         <Button
-            android:id="@+id/Tombol_Login"
+            android:id="@+id/Tombol_MasukAkun"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
