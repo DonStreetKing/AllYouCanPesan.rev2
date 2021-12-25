@@ -60,8 +60,8 @@ public class Transaksi extends AppCompatActivity {
                 ListHistoriTransaksi.setAdapter(adapter);
                 MainModel_Transaksi_ListTransaksi posisi = adapter.getItem(position);
                 Bundle data = new Bundle();
-                data.putString("Nama_Restoran", posisi.getNama_Restoran());
-                data.putString("Tanggal_Beli", posisi.getTanggal_Beli());
+//                data.putString("Nama_Restoran", posisi.getNama_Restoran());
+                data.putString("Tanggal_Transaksi", posisi.getTanggal_Transaksi());
                 data.putString("Jumlah_Transaksi", posisi.getJumlah_Transaksi());
                 data.putString("Status_Transaksi", posisi.getStatus_Transaksi());
                 intent.putExtras(data);
@@ -80,8 +80,8 @@ public class Transaksi extends AppCompatActivity {
                         JSONObject jsonObject = response.getJSONObject(i);
 
                         HistoriTransaksiAPI = new MainModel_Transaksi_ListTransaksi(
-                                jsonObject.getString("Nama_Restoran"),
-                                jsonObject.getString("Tanggal_Beli"),
+//                                jsonObject.getString("Nama_Restoran"),
+                                jsonObject.getString("Tanggal_Transaksi"),
                                 jsonObject.getString("Jumlah_Transaksi"),
                                 jsonObject.getString("Status_Transaksi"));
                         HistoriTransaksi.add(HistoriTransaksiAPI);
