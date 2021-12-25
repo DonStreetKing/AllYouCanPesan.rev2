@@ -68,7 +68,6 @@ public class MenuRestoran extends AppCompatActivity {
         ListMenuRestoran.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(MenuRestoran.this, Checkout.class);
                 MainAdapter_InRestauranMenu_ListMenuRestoran adapter = new MainAdapter_InRestauranMenu_ListMenuRestoran(MenuRestoran, getApplicationContext());
 
                 ListMenuRestoran.setAdapter(adapter);
@@ -77,8 +76,8 @@ public class MenuRestoran extends AppCompatActivity {
                 data.putString("Nama_Menu", posisi.getNama_Menu());
                 data.putString("Harga_Menu", posisi.getHarga_Menu());
                 data.putString("Deskripsi_Menu", posisi.getDeskripsi_Menu());
-                intent.putExtras(data);
-                startActivity(intent);
+
+
             }
         });
         loaditem();
