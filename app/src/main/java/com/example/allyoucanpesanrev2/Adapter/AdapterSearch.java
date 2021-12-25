@@ -1,84 +1,75 @@
 package com.example.allyoucanpesanrev2.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.allyoucanpesanrev2.MenuRestoran;
 import com.example.allyoucanpesanrev2.R;
 
-import java.util.Collections;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class AdapterSearch extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private Context context;
-    private LayoutInflater inflater;
-    List<HasilSearch> data= Collections.emptyList();
-    HasilSearch current;
-    int currentPos=0;
+    List<HasilSearch> hasilSearches;
 
-    public AdapterSearch(Context context, List<HasilSearch> data){
-        this.context=context;
-        inflater= LayoutInflater.from(context);
-        this.data=data;
+    public RecyclerViewAdapter(Context context, List<HasilSearch> hasilSearches) {
+        this.context = context;
+        this.hasilSearches = hasilSearches;
     }
 
-    public RecyclerView.ViewHolder onCrateViewHolder(ViewGroup parent, int viewType) {
-        View view=inflater.inflate(R.layout.container_hasil_search, parent,false);
-        MyHolder holder=new MyHolder(view);
-        return holder;
-    }
-
-    @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.container_hasil_search, parent, false);
+        ViewHolder holder = new ViewHolder(v);
+        return holder;
     }
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
         // Get current position of item in RecyclerView to bind data and assign values from list
-        MyHolder myHolder= (MyHolder) holder;
-        HasilSearch current=data.get(position);
-        myHolder.TextToShowNamaRestoran.setText(current.Nama_Restoran);
-        myHolder.TextToShowJarakRestoranHome.setText("Size: " + current.Jarak_Restoran);
-        myHolder.TextToShowMejaTersediaHome.setText("Category: " + current.Meja_Tersedia);
-//        myHolder.textPrice.setText("Rs. " + current.price + "\\Kg");
-
+        HasilSearch hasilSearch = hasilSearches.get(position);
+        holder.TextToShowNamaRestoran.setText(hasilSearch.Nama_Restoran);
+        holder.TextToShowJarakRestoranHome.setText("Size: " + hasilSearch.Jarak_Restoran);
+        holder.TextToShowMejaTersediaHome.setText("Category: " + hasilSearch.Meja_Tersedia);
     }
-
     @Override
     public int getItemCount() {
-        return data.size();
+        return hasilSearches.size();
     }
 
-    class MyHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        TextView TextToShowNamaRestoran;
-        TextView TextToShowJarakRestoranHome;
-        TextView TextToShowMejaTersediaHome;
+        @BindView(R.id.TextToShow_NamaRestoran) TextView TextToShowNamaRestoran;
+        @BindView(R.id.TextToShow_JarakRestoranHome) TextView TextToShowJarakRestoranHome;
+        @BindView(R.id.TextToShow_MejaTersediaHome) TextView TextToShowMejaTersediaHome;
 
-        // create constructor to get widget reference
-        public MyHolder(View itemView) {
+        public ViewHolder(View itemView) {
             super(itemView);
-            TextToShowNamaRestoran = (TextView) itemView.findViewById(R.id.TextToShow_NamaRestoran);
-            TextToShowJarakRestoranHome = (TextView) itemView.findViewById(R.id.TextToShow_JarakRestoranHome);
-            TextToShowMejaTersediaHome = (TextView) itemView.findViewById(R.id.TextToShow_MejaTersediaHome);
+            ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(this);
         }
 
-        // Click event for all items
         @Override
-        public void onClick(View v) {
+        public void onClick(View view) {
+            String NamaRestoran = TextToShowNamaRestoran.getText().toString();
+            String JarakRestoran = TextToShowJarakRestoranHome.getText().toString();
+            String MejaTersedia = TextToShowMejaTersediaHome.getText().toString();
 
-            Toast.makeText(context, "You clicked an item", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(context, MenuRestoran.class);
+            intent.putExtra("Nama_Restoran", NamaRestoran);
+            intent.putExtra("Jarak_Restoran", JarakRestoran);
+            intent.putExtra("Meja_Tersedia", MejaTersedia);
+            context.startActivity(intent);
         }
     }
 }

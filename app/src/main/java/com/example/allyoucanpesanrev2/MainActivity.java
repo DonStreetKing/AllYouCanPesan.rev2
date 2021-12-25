@@ -3,15 +3,18 @@ package com.example.allyoucanpesanrev2;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.MenuItemCompat;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -105,6 +108,52 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         loaditem();
+
+        @Override
+        public boolean onCreateOptionsMenu(Menu menu) {
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.search_main, menu);
+
+            MenuItem searchViewItem = menu.findItem(R.id.search_bar);
+            SearchView searchView = MenuItemCompat.getActionView(searchViewItem);
+
+            searchView.setOnQueryTextListener(
+                    new SearchView.OnQueryTextListener() {
+
+                        // Override onQueryTextSubmit method
+                        // which is call
+                        // when submitquery is searched
+
+                        @Override
+                        public boolean onQueryTextSubmit(String query)
+                        {
+                            // If the list contains the search query
+                            // than filter the adapter
+                            // using the filter method
+                            // with the query as its argument
+                            if (ListRestoranTerdekat.contains(query)) {
+                                adapter.getFilter().filter(query);
+                            }
+                            else {
+                                // Search query not found in List View
+                                Toast.makeText(MainActivity.this, "Not found", Toast.LENGTH_LONG).show();
+                            }
+                            return false;
+                        }
+
+                        // This method is overridden to filter
+                        // the adapter according to a search query
+                        // when the user is typing search
+                        @Override
+                        public boolean onQueryTextChange(String newText)
+                        {
+                            adapter.getFilter().filter(newText);
+                            return false;
+                        }
+                    });
+
+            return super.onCreateOptionsMenu(menu);
+        }
     }
 
     private void loaditem() {
