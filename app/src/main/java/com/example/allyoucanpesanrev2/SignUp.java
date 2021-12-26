@@ -27,6 +27,10 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class SignUp extends AppCompatActivity {
     ProgressDialog progressDialog;
     Button BuatAkun;
@@ -36,16 +40,28 @@ public class SignUp extends AppCompatActivity {
     int success;
     ConnectivityManager connectivityManager;
 
-    private String url = Server.URL + "Registrasi_User.php";
-    private static final String TAG = SignUp.class.getSimpleName();
-    private static final String TAG_SUCCESS = "success";
-    private static final String TAG_MESSAGE = "message";
-    String tag_json_obj = "json_obj_req";
+    public static final String URL = Server.URLLocal;
+
+    @BindView(R.id.KolomIsi_Nama) EditText kolomisinama;
+    @BindView(R.id.editTextBuatEmail) EditText EditTextBuatEmail;
+    @BindView(R.id.editTextPassword1) EditText EditTextPassword1;
+    @BindView(R.id.editTextPassword2) EditText EditTextPassword2;
+
+    @OnClick(R.id.Tombol_MasukAkun) void signup() {
+    }
+
+//    private String url = Server.URLLocal + "Registrasi_User.php";
+//    private static final String TAG = SignUp.class.getSimpleName();
+//    private static final String TAG_SUCCESS = "success";
+//    private static final String TAG_MESSAGE = "message";
+//    String tag_json_obj = "json_obj_req";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+
+        ButterKnife.bind(this);
 
         connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         {
