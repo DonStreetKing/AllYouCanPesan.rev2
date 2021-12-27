@@ -38,7 +38,7 @@ public class Login extends AppCompatActivity {
     int success;
     ConnectivityManager connectivityManager;
 
-    private String url = Server.URL + "Login_User.php";
+    private String url = Server.URLLocal + "Login_User.php";
 
     private static final String TAG = Login.class.getSimpleName();
     private static final String TAG_Success = "Sukses";
@@ -69,8 +69,9 @@ public class Login extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_LONG).show();
             }
         }
-        Tombol_MasukAkun = findViewById(R.id.Tombol_MasukAkun);
-        EditText_Email = findViewById(R.id.KolomIsi_Email);
+        signup = findViewById(R.id.Tombol_KalauBelumPunyaAkun);
+        Tombol_MasukAkun = findViewById(R.id.Tombol_BuatAkun);
+        EditText_Email = findViewById(R.id.KolomIsi_Nama);
         EditText_Password = findViewById(R.id.editTextTextPassword);
 
         // cek session login
@@ -105,6 +106,14 @@ public class Login extends AppCompatActivity {
                 else {
                     Toast.makeText(getApplicationContext(), "Kolom tidak boleh kosong", Toast.LENGTH_LONG).show();
                 }
+            }
+        });
+
+        signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Login.this, SignUp.class);
+                startActivity(intent);
             }
         });
     }
