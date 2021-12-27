@@ -3,4 +3,6 @@
     <string name="history_transaksi_kamu">History Transaksi Kamu</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
+    <string name="filter">Filter</string>
+    <string name="sort">Sort</string>
 </resources>

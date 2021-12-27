@@ -10,29 +10,25 @@
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/roundedcorner_bottomonly_bg"
         android:orientation="vertical">
 
-        <FrameLayout
+        <TextView
+            android:id="@+id/TextToShow_TitleHistoriTransaksi"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/Credential_background">
-
-            <TextView
-                android:id="@+id/TextToShow_TitleHistoriTransaksi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/history_transaksi_kamu"
-                android:textSize="20sp" />
-        </FrameLayout>
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/history_transaksi_kamu"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/BottomNav_SortNFilter"
+        android:layout_above="@id/ButtomButtonLayout"
         android:layout_below="@+id/linearLayout3">
 
         <ListView
@@ -41,35 +37,46 @@
             android:layout_height="match_parent" />
     </LinearLayout>
 
-    <TableLayout
-        android:id="@+id/BottomNav_SortNFilter"
+    <LinearLayout
+        android:id="@+id/ButtomButtonLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/roundedcorner_toponly_bg"
+        android:orientation="horizontal">
 
-        <TableRow
-            android:id="@+id/BottomNav_Tombol_SortNFilter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/TombolSort"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/Clickalble"
+            android:shadowRadius="5"
+            android:text="@string/sort"
+            android:textColor="#000000"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/icon_sort"
+            app:iconTint="@color/black" />
 
-            <ImageButton
-                android:id="@+id/TombolSort"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:tint="@color/Clickalble"
-                app:srcCompat="@drawable/icon_sort" />
-
-            <ImageButton
-                android:id="@+id/TombolFilter"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_weight="1"
-                android:tint="@color/Clickalble"
-                app:srcCompat="@drawable/icon_filter" />
-        </TableRow>
-
-    </TableLayout>
+        <Button
+            android:id="@+id/TombolFilter"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/Clickalble"
+            android:shadowRadius="5"
+            android:text="@string/filter"
+            android:textColor="#000000"
+            app:cornerRadius="10dp"
+            app:icon="@drawable/icon_filter"
+            app:iconTint="@color/Background" />
+    </LinearLayout>
 
 
 </RelativeLayout>
