@@ -4,12 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -40,43 +37,37 @@ public class Akun extends AppCompatActivity {
         EmailPengguna.setText(Email);
 
         //Tombol Logout
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putBoolean(Login.session_status, false);
-                editor.putString(TAG_Nama, null);
-                editor.putString(TAG_Email, null);
-                editor.commit();
+        logout.setOnClickListener(view -> {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean(Login.session_status, false);
+            editor.putString(TAG_Nama, null);
+            editor.putString(TAG_Email, null);
+            editor.commit();
 
-                Intent intent = new Intent(Akun.this, Login.class);
-                finish();
-                startActivity(intent);
-            }
+            Intent intent = new Intent(Akun.this, Login.class);
+            finish();
+            startActivity(intent);
         });
 
         // Navigation Bar
         BottomNavigationView bottomNavigationView= findViewById(R.id.bottom_navigation);
         bottomNavigationView.setSelectedItemId(R.id.PageAkun);
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-                    case R.id.PageHome:
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        return true;
-                    case R.id.PageExplore:
-                        startActivity(new Intent(getApplicationContext(), Explore.class));
-                        return true;
-                    case R.id.PageTransaksi:
-                        startActivity(new Intent(getApplicationContext(), Transaksi.class));
-                        return true;
-                    case R.id.PageAkun:
+        bottomNavigationView.setOnNavigationItemSelectedListener(menuItem -> {
+            switch (menuItem.getItemId()) {
+                case R.id.PageHome:
+                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    return true;
+                case R.id.PageExplore:
+                    startActivity(new Intent(getApplicationContext(), Explore.class));
+                    return true;
+                case R.id.PageTransaksi:
+                    startActivity(new Intent(getApplicationContext(), Transaksi.class));
+                    return true;
+                case R.id.PageAkun:
 //                        startActivity(new Intent(getApplicationContext(), Akun.class));
-                        return true;
-                }
-                return false;
+                    return true;
             }
+            return false;
         });
         // End Bottom Nav Bar
     }
