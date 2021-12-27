@@ -113,9 +113,11 @@
             android:id="@+id/Tombol_KalauBelumPunyaAkun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:linksClickable="true"
             android:text="@string/already_a_user_sign_in_now"
+            android:textAlignment="center"
             android:textSize="20sp" />
 
     </LinearLayout>

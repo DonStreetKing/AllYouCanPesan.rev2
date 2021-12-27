@@ -30,19 +30,6 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/editTextTextPassword"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:background="@drawable/rounded_layout_bg"
-            android:backgroundTint="@color/Background"
-            android:ems="10"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:minHeight="48dp" />
-
-        <EditText
             android:id="@+id/KolomIsi_Nama"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
@@ -53,6 +40,19 @@
             android:ems="10"
             android:hint="@string/email"
             android:inputType="textWebEmailAddress"
+            android:minHeight="48dp" />
+
+        <EditText
+            android:id="@+id/editTextTextPassword"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/rounded_layout_bg"
+            android:backgroundTint="@color/Background"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
             android:minHeight="48dp" />
 
         <TextView
