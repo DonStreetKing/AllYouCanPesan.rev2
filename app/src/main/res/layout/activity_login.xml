@@ -40,7 +40,8 @@
             android:ems="10"
             android:hint="@string/email"
             android:inputType="textWebEmailAddress"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:textColorHint="@color/black" />
 
         <EditText
             android:id="@+id/editTextTextPassword"
@@ -53,7 +54,8 @@
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:textColorHint="@color/black" />
 
         <TextView
             android:id="@+id/textView"

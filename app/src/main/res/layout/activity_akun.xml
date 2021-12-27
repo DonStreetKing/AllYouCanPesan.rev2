@@ -11,23 +11,18 @@
         android:id="@+id/Layout_banner_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/roundedcorner_bottomonly_bg"
+        android:backgroundTint="@color/Credential_background"
         android:orientation="horizontal">
 
-        <FrameLayout
+        <TextView
+            android:id="@+id/AkunSayaText"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/Credential_background"
-            android:layout_weight="1">
-
-            <TextView
-                android:id="@+id/AkunSayaText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="@string/akun_saya"
-                android:textSize="20sp" />
-        </FrameLayout>
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/akun_saya"
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -59,8 +54,9 @@
             <TextView
                 android:id="@+id/NamaUser"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Muhammad Rizuan"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Nama User"
                 android:textSize="20sp" />
 
             <TextView
@@ -154,6 +150,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/roundedcorner_toponly_bg"
             app:itemIconTint="@color/Clickalble"
+            app:itemTextColor="@color/black"
             app:menu="@menu/bottom_navigation_menu" />
     </LinearLayout>
 

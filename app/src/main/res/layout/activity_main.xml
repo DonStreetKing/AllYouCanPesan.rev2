@@ -153,6 +153,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/roundedcorner_toponly_bg"
             app:itemIconTint="@color/Clickalble"
+            app:itemTextColor="@color/black"
             app:menu="@menu/bottom_navigation_menu" />
     </LinearLayout>
 

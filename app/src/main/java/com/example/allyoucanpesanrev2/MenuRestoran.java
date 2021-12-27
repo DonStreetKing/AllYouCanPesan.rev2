@@ -19,6 +19,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.allyoucanpesanrev2.Adapter.MainAdapter_InRestauranMenu_ListMenuRestoran;
+import com.example.allyoucanpesanrev2.AdditionalNeededClass.Server;
 import com.example.allyoucanpesanrev2.Model.MainModel_InRestauranMenu_ListMenuRestoran;
 
 import org.json.JSONArray;
@@ -29,11 +30,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MenuRestoran extends AppCompatActivity {
-    public static final String URL_Menu_Restoran = "http://donstreetking.duckdns.org:8082/API/AllYouCanPesan/Get_ListMenuRestoran.php";
+    public static final String URL_Menu_Restoran = Server.URL + "Get_ListMenuRestoran.php";
     public MainModel_InRestauranMenu_ListMenuRestoran MenuRestoranAPI;
     ListView ListMenuRestoran;
     private List<MainModel_InRestauranMenu_ListMenuRestoran> MenuRestoran;
-    public String SS;
     TextView TextToShow_inBanner_NamaRestoran, TextToShow_inBanner_JarakRestoran, TextToShow_inBanner_MejaTersedia, TextToShow_inBanner_WaktuOperasional;
 
     @Override

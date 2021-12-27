@@ -13,11 +13,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Akun extends AppCompatActivity {
     Button logout;
-    TextView NamaUser, EmailPengguna;
+    public static TextView NamaUser, EmailPengguna;
     String Nama, Email;
     SharedPreferences sharedPreferences;
 
-    public static final String TAG_Nama = "Nama";
+    public static final String TAG_NAMA = "Nama";
     public static final String TAG_Email = "Email";
 
     @Override
@@ -25,12 +25,12 @@ public class Akun extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_akun);
 
-        NamaUser = (TextView) findViewById(R.id.NamaUser);
-        EmailPengguna = (TextView) findViewById(R.id.Email_Pengguna);
-        logout = (Button) findViewById(R.id.Tombol_LogOut);
+        NamaUser = findViewById(R.id.NamaUser);
+        EmailPengguna = findViewById(R.id.Email_Pengguna);
+        logout = findViewById(R.id.Tombol_LogOut);
 
         sharedPreferences = getSharedPreferences(Login.my_shared_preferences, Context.MODE_PRIVATE);
-        Nama = getIntent().getStringExtra(TAG_Nama);
+        Nama = getIntent().getStringExtra(TAG_NAMA);
         Email = getIntent().getStringExtra(TAG_Email);
 
         NamaUser.setText(Nama);
@@ -40,7 +40,7 @@ public class Akun extends AppCompatActivity {
         logout.setOnClickListener(view -> {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean(Login.session_status, false);
-            editor.putString(TAG_Nama, null);
+            editor.putString(TAG_NAMA, null);
             editor.putString(TAG_Email, null);
             editor.commit();
 

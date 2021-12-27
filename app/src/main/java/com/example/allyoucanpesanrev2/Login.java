@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity {
 
     private static final String TAG = Login.class.getSimpleName();
     private static final String TAG_Success = "success";
-    private static final String TAG_MESSAGE = "messageW";
+    private static final String TAG_MESSAGE = "message";
 
     public final static String TAG_EMAIL = "Email";
     public final static String TAG_NAMA = "Nama";
@@ -138,9 +138,9 @@ public class Login extends AppCompatActivity {
                     editor.commit();
 
                     // call main actibiyt
-                    Intent intent = new Intent(Login.this, Akun.class);
-                        intent.putExtra(TAG_EMAIL, Email);
-                        intent.putExtra(TAG_NAMA, Nama);
+                    Intent intent = new Intent(Login.this, MainActivity.class);
+                    intent.putExtra(TAG_EMAIL, Email);
+                    intent.putExtra(TAG_NAMA, Nama);
                     finish();
                     startActivity(intent);
                 } else {
@@ -170,11 +170,11 @@ public class Login extends AppCompatActivity {
     }
 
     private void hideDialog() {
-        if (!progressDialog.isShowing())
-            progressDialog.hide();
+        if (progressDialog.isShowing())
+            progressDialog.dismiss();
     }
     private void showDialog() {
-        if (progressDialog.isShowing())
+        if (!progressDialog.isShowing())
             progressDialog.show();
     }
 }
