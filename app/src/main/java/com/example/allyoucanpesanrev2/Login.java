@@ -7,7 +7,6 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,8 +15,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.Request;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.allyoucanpesanrev2.AdditionalNeededClass.AppController;
 import com.example.allyoucanpesanrev2.AdditionalNeededClass.Server;
@@ -38,11 +35,11 @@ public class Login extends AppCompatActivity {
     int success;
     ConnectivityManager connectivityManager;
 
-    private String url = Server.URLLocal + "Login_User.php";
+    private String url = Server.URL + "Login_User_SQLI.php";
 
     private static final String TAG = Login.class.getSimpleName();
-    private static final String TAG_Success = "Sukses";
-    private static final String TAG_MESSAGE = "Message";
+    private static final String TAG_Success = "success";
+    private static final String TAG_MESSAGE = "messageW";
 
     public final static String TAG_EMAIL = "Email";
     public final static String TAG_NAMA = "Nama";
@@ -81,94 +78,82 @@ public class Login extends AppCompatActivity {
         Email = sharedPreferences.getString(TAG_EMAIL, null);
 
         if (session) {
-            Intent intent = new Intent(Login.this, MainActivity.class);
+            intent = new Intent(Login.this, MainActivity.class);
             intent.putExtra(TAG_NAMA, Nama);
             intent.putExtra(TAG_EMAIL, Email);
             finish();
             startActivity(intent);
         }
 
-        Tombol_MasukAkun.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String Email = EditText_Email.getText().toString();
-                String Password = EditText_Password.getText().toString();
+        Tombol_MasukAkun.setOnClickListener(v -> {
+            String Email = EditText_Email.getText().toString();
+            String Password = EditText_Password.getText().toString();
 
-                //Cek kolom kosong
-                if (Email.trim().length() > 0 && Password.trim().length() > 0) {
-                    if (connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isAvailable() && connectivityManager.getActiveNetworkInfo().isConnected()) {
-                        checkLogin(Email, Password);
-                    }
-                    else {
-                        Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_LONG).show();
-                    }
+            //Cek kolom kosong
+            if (Email.trim().length() > 0 && Password.trim().length() > 0) {
+                if (connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isAvailable() && connectivityManager.getActiveNetworkInfo().isConnected()) {
+                    checkLogin(Email, Password);
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Kolom tidak boleh kosong", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_LONG).show();
                 }
+            }
+            else {
+                Toast.makeText(getApplicationContext(), "Kolom tidak boleh kosong", Toast.LENGTH_LONG).show();
             }
         });
 
-        signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Login.this, SignUp.class);
-                startActivity(intent);
-            }
+        signup.setOnClickListener(v -> {
+            intent = new Intent(Login.this, SignUp.class);
+            startActivity(intent);
         });
     }
     private void checkLogin(final String Email, final String Password) {
         progressDialog = new ProgressDialog(this);
-        progressDialog.setCancelable(false);
+        progressDialog.setCancelable(true);
         progressDialog.setMessage("Logging in...");
         showDialog();
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Log.e(TAG, "Login Response:" + response.toString());
-                hideDialog();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, response -> {
+            Log.e(TAG, "Login Response:" + response.toString());
+            hideDialog();
 
-                try {
-                    JSONObject jsonObject = new JSONObject(response);
-                    success = jsonObject.getInt(TAG_Success);
+            try {
+                JSONObject jsonObject = new JSONObject(response);
+                success = jsonObject.getInt(TAG_Success);
 
-                    // check error node in json
-                    if (success == 1) {
-                        String Nama = jsonObject.getString(TAG_NAMA);
-                        String Email = jsonObject.getString(TAG_EMAIL);
+                // check error node in json
+                if (success == 1) {
+                    String Nama = jsonObject.optString(TAG_NAMA);
+//                    String Email = jsonObject.optString(TAG_EMAIL);
 
-                        Log.e("Login Success!", jsonObject.toString());
-                        Toast.makeText(getApplicationContext(), jsonObject.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
+                    Log.e("Login Success!", jsonObject.toString());
+                    Toast.makeText(getApplicationContext(), jsonObject.optString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
 
-                        // simpan login ke session
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putBoolean(session_status, true);
-                        editor.putString(TAG_EMAIL, Email);
-                        editor.putString(TAG_NAMA, Nama);
-                        editor.commit();
+                    // simpan login ke session
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean(session_status, true);
+                    editor.putString(TAG_EMAIL, Email);
+                    editor.putString(TAG_NAMA, Nama);
+                    editor.commit();
 
-                        // call main actibiyt
-                        Intent intent = new Intent(Login.this, MainActivity.class);
-//                        intent.putExtra(TAG_EMAIL, Email);
-//                        intent.putExtra(TAG_NAMA, Nama);
-                        finish();
-                        startActivity(intent);
-                    } else {
-                        Toast.makeText(getApplicationContext(), jsonObject.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                    // call main actibiyt
+                    Intent intent = new Intent(Login.this, Akun.class);
+                        intent.putExtra(TAG_EMAIL, Email);
+                        intent.putExtra(TAG_NAMA, Nama);
+                    finish();
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getApplicationContext(), jsonObject.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
                 }
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
         },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e(TAG, "Login Error: " + error.getMessage());
-                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
-                        hideDialog();
-                    }
+                error -> {
+                    Log.e(TAG, "Login Error: " + error.getMessage());
+                    Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                    hideDialog();
                 }) {
             @Override
             protected Map<String, String> getParams() {
@@ -186,10 +171,10 @@ public class Login extends AppCompatActivity {
 
     private void hideDialog() {
         if (!progressDialog.isShowing())
-            progressDialog.show();
+            progressDialog.hide();
     }
     private void showDialog() {
         if (progressDialog.isShowing())
-            progressDialog.dismiss();
+            progressDialog.show();
     }
 }

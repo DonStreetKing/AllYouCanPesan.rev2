@@ -1,5 +1,6 @@
 package com.example.allyoucanpesanrev2;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -31,7 +32,7 @@ public class Akun extends AppCompatActivity {
         EmailPengguna = (TextView) findViewById(R.id.Email_Pengguna);
         logout = (Button) findViewById(R.id.Tombol_LogOut);
 
-//        sharedPreferences = getSharedPreferences(Login.my_shared_preferences, Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(Login.my_shared_preferences, Context.MODE_PRIVATE);
         Nama = getIntent().getStringExtra(TAG_Nama);
         Email = getIntent().getStringExtra(TAG_Email);
 
@@ -42,7 +43,14 @@ public class Akun extends AppCompatActivity {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean(Login.session_status, false);
+                editor.putString(TAG_Nama, null);
+                editor.putString(TAG_Email, null);
+                editor.commit();
+
                 Intent intent = new Intent(Akun.this, Login.class);
+                finish();
                 startActivity(intent);
             }
         });
