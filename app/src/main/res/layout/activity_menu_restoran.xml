@@ -61,6 +61,7 @@
                         android:id="@+id/TextToShow_inBanner_MejaTersedia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="Meja"
                         android:textSize="16sp" />
 
                 </LinearLayout>
