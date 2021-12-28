@@ -15,9 +15,12 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.allyoucanpesanrev2.Adapter.MainAdapter_ActivityMain_ListRestoranTerdekat;
+import com.example.allyoucanpesanrev2.Adapter.SliderAdapter;
 import com.example.allyoucanpesanrev2.AdditionalNeededClass.Server;
+import com.example.allyoucanpesanrev2.AdditionalNeededClass.SliderData;
 import com.example.allyoucanpesanrev2.Model.MainModel_ActivityMain_ListRestoranTerdekat;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.smarteist.autoimageslider.SliderView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,6 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
     public static final String URL_GetData_API = Server.URL + "Get_ListRestoran.php";
     public MainModel_ActivityMain_ListRestoranTerdekat ListAPI;
     ListView ListRestoranTerdekat;
@@ -33,10 +37,29 @@ public class MainActivity extends AppCompatActivity {
     public String ID;
     private MenuItem item;
 
+    String URLPromo = Server.URLPromo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Bagian Promo// == https://www.geeksforgeeks.org/auto-image-slider-in-android-with-example/ ==
+        ArrayList<SliderData> sliderDataArrayList = new ArrayList<>();
+        SliderView sliderView = findViewById(R.id.slider);
+
+        sliderDataArrayList.add(new SliderData(URLPromo + "promo1.jpg"));
+        sliderDataArrayList.add(new SliderData(URLPromo + "promo2.jpg"));
+        sliderDataArrayList.add(new SliderData(URLPromo + "promo3.jpg"));
+
+        SliderAdapter adapter1 = new SliderAdapter(this, sliderDataArrayList);
+        sliderView.setAutoCycleDirection(SliderView.LAYOUT_DIRECTION_LTR);
+        sliderView.setSliderAdapter(adapter1);
+        sliderView.setScrollTimeInSec(3);
+        sliderView.setAutoCycle(true);
+        sliderView.startAutoCycle();
+
+        // End Bagian Promo
 
         //======================= Horizontal View =================================\\
 
