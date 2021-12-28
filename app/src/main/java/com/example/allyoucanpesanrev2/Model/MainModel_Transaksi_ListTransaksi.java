@@ -18,7 +18,9 @@ public class MainModel_Transaksi_ListTransaksi implements Parcelable {
 //    public String getNama_Restoran() {
 //        return Nama_Restoran;
 //    }
-    public String getID_Transaksi() {return ID_Transaksi;}
+    public String getID_Transaksi() {
+        return ID_Transaksi;
+    }
     public String getTanggal_Transaksi() {
         return Tanggal_Beli;
     }
@@ -47,8 +49,8 @@ public class MainModel_Transaksi_ListTransaksi implements Parcelable {
     public void setStatus_Transaksi(String status_Transaksi) {
         Status_Transaksi = status_Transaksi;
     }
-    public void setMetode_Transaksi(String Metode_Transaksi) {
-        Metode_Transaksi = Metode_Transaksi;
+    public void setMetode_Transaksi(String metode_Transaksi) {
+        Metode_Transaksi = metode_Transaksi;
     }
 
     @Override
