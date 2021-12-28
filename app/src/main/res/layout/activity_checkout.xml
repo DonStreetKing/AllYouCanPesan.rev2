@@ -111,10 +111,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:textColor="@color/grey"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Input disini" />
+            android:hint="Input disini"
+            android:inputType="number" />
 
 
     </LinearLayout>
