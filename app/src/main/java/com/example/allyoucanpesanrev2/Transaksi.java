@@ -55,8 +55,8 @@ public class Transaksi extends AppCompatActivity {
             MainModel_Transaksi_ListTransaksi posisi = adapter.getItem(position);
             Bundle data = new Bundle();
             data.putString("ID_Transaksi", posisi.getID_Transaksi());
-            data.putString("Metode_Transaksi", posisi.getMetode_Transaksi());
-//                data.putString("Nama_Restoran", posisi.getNama_Restoran());
+//            data.putString("Metode_Transaksi", posisi.getMetode_Transaksi());
+//            data.putString("Nama_Restoran", posisi.getNama_Restoran());
             data.putString("Tanggal_Transaksi", posisi.getTanggal_Transaksi());
             data.putString("Jumlah_Transaksi", posisi.getJumlah_Transaksi());
             data.putString("Status_Transaksi", posisi.getStatus_Transaksi());
@@ -77,7 +77,7 @@ public class Transaksi extends AppCompatActivity {
 //                                jsonObject.getString("Nama_Restoran"),
                             jsonObject.getString("Tanggal_Transaksi"),
                             jsonObject.getString("Jumlah_Transaksi"),
-                            jsonObject.getString("Metode_Transaksi"),
+//                            jsonObject.getString("Metode_Transaksi"),
                             jsonObject.getString("Status_Transaksi"));
                     HistoriTransaksi.add(HistoriTransaksiAPI);
                 }

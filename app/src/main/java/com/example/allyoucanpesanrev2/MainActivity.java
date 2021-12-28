@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         //======================= Horizontal View =================================\\
 
         // Start Tombol RestoranNoTutup
-        ImageButton duaempatjam = (ImageButton) findViewById(R.id.TombolRestoranNoTutup);
+        ImageButton duaempatjam = findViewById(R.id.TombolRestoranNoTutup);
         duaempatjam.setOnClickListener(view -> {
 
             Intent x = new Intent(MainActivity.this, RestoranNoTutup.class);
@@ -184,9 +184,7 @@ public class MainActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
         },
-                error -> {
-                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
-                });
+                error -> Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_SHORT).show());
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(jsonArrayRequest);
     }
