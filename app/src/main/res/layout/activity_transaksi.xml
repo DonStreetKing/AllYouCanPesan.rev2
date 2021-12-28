@@ -29,12 +29,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/ButtomButtonLayout"
-        android:layout_below="@+id/linearLayout3">
+        android:layout_below="@+id/linearLayout3"
+        android:layout_marginTop="10dp">
 
         <ListView
             android:id="@+id/ShowListTransaksi"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="5dp" />
     </LinearLayout>
 
     <LinearLayout

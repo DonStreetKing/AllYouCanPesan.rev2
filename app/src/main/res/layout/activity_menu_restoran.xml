@@ -63,13 +63,6 @@
                         android:layout_height="wrap_content"
                         android:textSize="16sp" />
 
-                    <TextView
-                        android:id="@+id/textView20"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="@string/meja_tersedia"
-                        android:textSize="16sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -280,7 +273,9 @@
         <ListView
             android:id="@+id/List_MenuRestoran"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="5dp" />
     </LinearLayout>
 
     <LinearLayout

@@ -2,7 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_margin="5dp"
+    android:background="@drawable/rounded_layout_bg">
 
     <ImageView
         android:id="@+id/GambarRestoran"
@@ -44,7 +46,9 @@
         android:id="@+id/TextToShow_StatusTransaksi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:gravity="center"
-        android:text="TextView" />
+        android:text="TextView"
+        android:textStyle="bold" />
 
 </LinearLayout>

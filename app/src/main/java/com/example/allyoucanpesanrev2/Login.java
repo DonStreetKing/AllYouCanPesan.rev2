@@ -66,7 +66,7 @@ public class Login extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_LONG).show();
             }
         }
-        signup = findViewById(R.id.Tombol_KalauBelumPunyaAkun);
+        signup = findViewById(R.id.Tombol_KalauSudahPunyaAkun);
         Tombol_MasukAkun = findViewById(R.id.Tombol_BuatAkun);
         EditText_Email = findViewById(R.id.KolomIsi_Nama);
         EditText_Password = findViewById(R.id.editTextTextPassword);

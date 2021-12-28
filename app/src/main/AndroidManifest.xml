@@ -15,6 +15,9 @@
         android:theme="@style/Theme.AllYouCanPesanrev2"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".DetailTransaksi"
+            android:exported="false" />
+        <activity
             android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>

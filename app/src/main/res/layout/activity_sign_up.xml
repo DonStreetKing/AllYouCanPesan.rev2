@@ -114,7 +114,7 @@
             android:text="@string/terms_and_condition" />
 
         <TextView
-            android:id="@+id/Tombol_KalauBelumPunyaAkun"
+            android:id="@+id/Tombol_KalauSudahPunyaAkun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"

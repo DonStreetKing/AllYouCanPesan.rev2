@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +29,7 @@ public class SignUp extends AppCompatActivity {
     ProgressDialog progressDialog;
     Button BuatAkun;
     EditText KolomIsiNama, KolomIsiEmail, KolomIsiPassword, KolomConfirmPassword;
+    TextView SudahPunyaAkun;
     Intent intent;
 
     int success;
@@ -50,9 +52,10 @@ public class SignUp extends AppCompatActivity {
             if (connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isAvailable() && connectivityManager.getActiveNetworkInfo().isConnected()) {
             }
             else {
-                Toast.makeText(getApplicationContext(), "No Internet COnnection", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_LONG).show();
             }
         }
+        SudahPunyaAkun = findViewById(R.id.Tombol_KalauSudahPunyaAkun);
         BuatAkun = findViewById(R.id.Tombol_BuatAkun);
         KolomIsiNama = findViewById(R.id.KolomIsi_Nama);
         KolomIsiEmail = findViewById(R.id.editTextBuatEmail);
@@ -72,6 +75,12 @@ public class SignUp extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "No Network Connection", Toast.LENGTH_SHORT).show();
             }
         });
+
+        SudahPunyaAkun.setOnClickListener(v -> {
+            intent = new Intent(SignUp.this, Login.class);
+            startActivity(intent);
+        });
+
     }
     private void checkRegister(final String Nama, final String Email, final String Password, final String Confirm_Password) {
         progressDialog = new ProgressDialog(this);
@@ -97,6 +106,10 @@ public class SignUp extends AppCompatActivity {
                     KolomIsiEmail.setText("");
                     KolomIsiPassword.setText("");
                     KolomConfirmPassword.setText("");
+
+                    intent = new Intent(SignUp.this, Login.class);
+                    startActivity(intent);
+
                 } else {
                     Toast.makeText(getApplicationContext(), jsonObject.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
                 }

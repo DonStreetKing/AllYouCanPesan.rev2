@@ -37,8 +37,8 @@ public class MainAdapter_ActivityMain_ListRestoranTerdekat extends ArrayAdapter<
         MainModel_ActivityMain_ListRestoranTerdekat mainModel_activityMain_listRestoranTerdekat = RestoranTerdekat.get(position);
 
         TextToShowNamaRestoran.setText(mainModel_activityMain_listRestoranTerdekat.getNama_Restoran());
-        TextToShowJarakRestoran.setText(mainModel_activityMain_listRestoranTerdekat.getJarak_Restoran());
-        TextToShowMejaTersedia.setText(mainModel_activityMain_listRestoranTerdekat.getMeja_Tersedia());
+        TextToShowJarakRestoran.setText(mainModel_activityMain_listRestoranTerdekat.getJarak_Restoran() + " KM dari sini");
+        TextToShowMejaTersedia.setText(mainModel_activityMain_listRestoranTerdekat.getMeja_Tersedia() + " Meja Tersedia");
         TextToShowJamBuka.setText(mainModel_activityMain_listRestoranTerdekat.getJam_Buka());
         TextToShowJamTutup.setText(mainModel_activityMain_listRestoranTerdekat.getJam_Tutup());
 
